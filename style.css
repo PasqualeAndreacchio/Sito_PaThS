@@ -1,0 +1,121 @@
+/* =========================================================
+   PaThS 2027 – Custom styles (complement to Tailwind CDN)
+   ========================================================= */
+
+/* ---- Base ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px; /* navbar height offset */
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Navbar scroll shadow ---- */
+#navbar.scrolled {
+  box-shadow: 0 4px 24px rgba(26, 58, 92, 0.10);
+}
+
+/* ---- Hero parallax hint ---- */
+#hero {
+  min-height: 100svh;
+}
+
+/* Text-shadow per massima leggibilità sul backdrop fotografico */
+.hero-title {
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.5);
+}
+.hero-subtitle {
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+#hero p {
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+}
+
+/* ---- Day accordion ---- */
+.day-header {
+  transition: opacity 0.15s ease;
+}
+.day-header:hover {
+  opacity: 0.93;
+}
+
+.day-chevron.open {
+  transform: rotate(180deg);
+}
+
+.day-content {
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+}
+
+/* ---- Schedule rows ---- */
+.schedule-row:last-child {
+  border-bottom: none !important;
+}
+
+/* ---- FAQ accordion ---- */
+.faq-btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+}
+
+.faq-icon {
+  transition: transform 0.2s ease;
+}
+.faq-icon.open {
+  transform: rotate(45deg);
+}
+
+/* ---- Sponsor / topic cards ---- */
+.topic-card,
+.logistics-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.topic-card:hover,
+.logistics-card:hover {
+  transform: translateY(-2px);
+}
+
+/* ---- Back to top ---- */
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---- Responsive image fallback ---- */
+img {
+  max-width: 100%;
+}
+
+/* ---- Section transition helper ---- */
+.section-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.section-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Mobile menu animation ---- */
+#mobile-menu {
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+}
+
+/* ---- Tailwind safelist extras ---- */
+/* These are needed because Tailwind CDN purges dynamically added classes */
+.border-paths-accent { border-color: #2563eb; }
+.text-paths-accent   { color: #2563eb; }
+.bg-paths-accent     { background-color: #2563eb; }
+.text-paths-blue     { color: #1a3a5c; }
+.bg-paths-blue       { background-color: #1a3a5c; }
+.border-paths-gold   { border-color: #d97706; }
+.bg-paths-gold       { background-color: #d97706; }
+.bg-paths-bg         { background-color: #f8fafc; }
+
