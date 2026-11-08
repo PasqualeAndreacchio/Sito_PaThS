@@ -292,11 +292,11 @@
         </div>
 
         <!-- Image -->
-        <div class="relative rounded-2xl overflow-hidden shadow-xl">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=75"
-            alt="Fisica teorica – lavagna con equazioni" class="w-full h-72 lg:h-96 object-cover"
+        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+          <img src="images/first_image.jpg"
+            alt="Fisica teorica – Sheldon Cooper" class="w-full h-72 lg:h-96 object-cover object-center"
             onerror="this.parentElement.classList.add('bg-gradient-to-br','from-paths-blue','to-blue-700'); this.style.display='none';" />
-          <div class="absolute inset-0 bg-gradient-to-t from-paths-blue/40 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-paths-blue/30 via-transparent to-transparent"></div>
         </div>
       </div>
 
@@ -815,7 +815,8 @@
         <!-- Card 1: Dipartimento di Fisica e Astronomia -->
         <div
           class="group bg-paths-bg rounded-2xl border border-gray-200 overflow-hidden hover:border-paths-accent hover:shadow-lg transition-all duration-300 flex flex-col">
-          <div class="relative h-48 w-full overflow-hidden bg-slate-50 flex items-center justify-center p-6 border-b border-gray-100">
+          <div
+            class="relative h-48 w-full overflow-hidden bg-slate-50 flex items-center justify-center p-6 border-b border-gray-100">
             <img src="images/dfa.jpg" alt="Dipartimento di Fisica e Astronomia G. Galilei"
               class="max-h-full max-w-full object-contain rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-500" />
             <div
@@ -861,7 +862,8 @@
         <!-- Card 2: Scuola Galileiana di Studi Superiori -->
         <div
           class="group bg-paths-bg rounded-2xl border border-gray-200 overflow-hidden hover:border-paths-accent hover:shadow-lg transition-all duration-300 flex flex-col">
-          <div class="relative h-48 w-full overflow-hidden bg-slate-50 flex items-center justify-center p-6 border-b border-gray-100">
+          <div
+            class="relative h-48 w-full overflow-hidden bg-slate-50 flex items-center justify-center p-6 border-b border-gray-100">
             <img src="images/galileiana.jpg" alt="Scuola Galileiana di Studi Superiori"
               class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500" />
             <div
@@ -907,7 +909,8 @@
         <!-- Card 3: Palazzo Bo -->
         <div
           class="group bg-paths-bg rounded-2xl border border-gray-200 overflow-hidden hover:border-paths-accent hover:shadow-lg transition-all duration-300 flex flex-col">
-          <div class="relative h-48 w-full overflow-hidden bg-slate-50 flex items-center justify-center p-6 border-b border-gray-100">
+          <div
+            class="relative h-48 w-full overflow-hidden bg-slate-50 flex items-center justify-center p-6 border-b border-gray-100">
             <img src="images/unipd.jpg" alt="Palazzo Bo – Università degli Studi di Padova"
               class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500" />
             <div
@@ -952,7 +955,8 @@
         <!-- Card 4: Hotello Padova -->
         <div
           class="group bg-paths-bg rounded-2xl border border-gray-200 overflow-hidden hover:border-paths-accent hover:shadow-lg transition-all duration-300 flex flex-col">
-          <div class="relative h-48 w-full overflow-hidden bg-slate-50 flex items-center justify-center p-6 border-b border-gray-100">
+          <div
+            class="relative h-48 w-full overflow-hidden bg-slate-50 flex items-center justify-center p-6 border-b border-gray-100">
             <img src="images/hotello.jpg" alt="Hotello Padova – Alloggio partecipanti"
               class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500" />
             <div
@@ -1287,8 +1291,6 @@
             PaThS è <strong>aperta a tutti gli studenti di Fisica</strong> afferenti ad AISF. Il livello delle lezioni e
             l'impostazione dell'evento sono pensati principalmente per studenti del <strong>3° anno della Triennale e
               dell'inizio della Magistrale</strong>, ma sono benvenuti anche dottorandi e studenti di anni successivi.
-            Verranno accolti circa 40 partecipanti da tutta Italia più 8 posti riservati a studenti dell'Università di
-            Padova.
           </div>
         </div>
 
@@ -1324,8 +1326,10 @@
             </svg>
           </button>
           <div class="faq-answer hidden px-6 pb-5 text-sm text-gray-600 leading-relaxed bg-white">
-            L'evento si svolge a <strong>Padova</strong>, principalmente presso la Scuola Galileiana e il Palazzo Bo
-            dell'Università. L'alloggio (Hotello Padova) si trova a circa 10 minuti a piedi dalla Stazione Centrale.
+            L'evento si svolge a <strong>Padova</strong>, principalmente presso il Dipartimento di Fisica e Astronomia,
+            la Scuola Galileiana e Palazzo Bo,
+            sede centrale dell'Università. L'alloggio (Hotello Padova) si trova a circa 10 minuti a piedi dalla Stazione
+            Centrale.
             Tutti gli spostamenti durante la scuola avverranno a piedi, senza necessità di trasporti pubblici
             aggiuntivi.
           </div>
@@ -1360,10 +1364,30 @@
             </svg>
           </button>
           <div class="faq-answer hidden px-6 pb-5 text-sm text-gray-600 leading-relaxed bg-white">
-            Assolutamente sì! PaThS integra le tradizionali attività sociali AISF: <strong>Physics &amp; Drinks</strong>
-            con aperitivo allo spritz padovano, <strong>Caccia al Tesoro culturale</strong> nel centro storico di
-            Padova, <strong>Bacaro Tour a Venezia</strong> il mercoledì sera e una <strong>Serata Finale</strong> con
-            cena sociale.
+            <p class="mb-3">Assolutamente sì! PaThS integra le tradizionali attività sociali AISF per favorire il
+              networking, la condivisione e il confronto informale tra tutti i partecipanti:</p>
+            <ul class="space-y-2 pl-1">
+              <li class="flex items-start gap-2.5">
+                <span class="text-paths-accent font-bold mt-0.5">•</span>
+                <span><strong>Physics &amp; Drinks:</strong> aperitivo tipico di benvenuto con lo spritz padovano al
+                  Birrone Padova.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-paths-accent font-bold mt-0.5">•</span>
+                <span><strong>Caccia al Tesoro Culturale &amp; Tour:</strong> attività a squadre per le vie e le piazze
+                  del centro storico di Padova.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-paths-accent font-bold mt-0.5">•</span>
+                <span><strong>Bacaro Tour a Venezia:</strong> escursione culturale del mercoledì sera in treno alla
+                  scoperta dei bacari veneziani (con eventuale serata "Mercolegin" a Padova).</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-paths-accent font-bold mt-0.5">•</span>
+                <span><strong>Serata Finale:</strong> evento di chiusura con cena sociale inclusa per tutti i
+                  partecipanti.</span>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -1379,8 +1403,10 @@
           </button>
           <div class="faq-answer hidden px-6 pb-5 text-sm text-gray-600 leading-relaxed bg-white">
             Puoi iscriverti tramite il form ufficiale cliccando sul pulsante <strong>"Iscriviti Ora"</strong> in cima
-            alla pagina. Per domande specifiche, puoi contattarci via email a <a href="mailto:paths@ai-sf.it"
-              class="text-paths-accent hover:underline">paths@ai-sf.it</a>.
+            alla pagina. Per qualsiasi domanda o chiarimento, puoi contattarci via email all'indirizzo <a
+              href="mailto:paths@ai-sf.it" class="text-paths-accent hover:underline">paths@ai-sf.it</a> oppure scriverci
+            in direct sulla pagina <a href="about:blank" target="_blank" rel="noopener noreferrer"
+              class="text-paths-accent hover:underline">Instagram di PaThS</a>.
           </div>
         </div>
 
@@ -1477,6 +1503,10 @@
         <!-- Contacts -->
         <div>
           <h4 class="text-white font-semibold text-sm mb-5 uppercase tracking-widest">Contatti</h4>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Per qualsiasi dubbio, informazione sul programma o sull'iscrizione puoi scriverci via email o contattarci
+            direttamente su Instagram:
+          </p>
           <ul class="space-y-3 text-sm">
             <li class="flex items-start gap-3">
               <svg class="w-4 h-4 text-paths-accent mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
@@ -1485,21 +1515,20 @@
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <div>
-                <p class="text-gray-500 text-xs mb-0.5">Email generale</p>
+                <p class="text-gray-500 text-xs mb-0.5">Email ufficiale</p>
                 <a href="mailto:paths@ai-sf.it"
                   class="text-gray-300 hover:text-white transition-colors">paths@ai-sf.it</a>
               </div>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-4 h-4 text-paths-accent mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              <svg class="w-4 h-4 text-pink-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
               </svg>
               <div>
-                <p class="text-gray-500 text-xs mb-0.5">Sede</p>
-                <span class="text-gray-300">Università degli Studi di Padova<br />Dip. di Fisica e Astronomia</span>
+                <p class="text-gray-500 text-xs mb-0.5">Instagram PaThS</p>
+                <a href="about:blank" target="_blank" rel="noopener noreferrer"
+                  class="text-gray-300 hover:text-white transition-colors">Scrivici su Instagram →</a>
               </div>
             </li>
             <li class="flex items-start gap-3">
