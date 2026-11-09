@@ -1,0 +1,85 @@
+---
+import Topics from './Topics.astro';
+import { eventInfo } from '../data/siteData';
+---
+
+<section id="about" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <span class="inline-block text-paths-accent font-mono text-xs font-semibold tracking-widest uppercase mb-3">
+        L'Iniziativa
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-paths-blue mb-4">
+        Una scuola nata per la fisica teorica
+      </h2>
+      <div class="w-16 h-1 bg-paths-accent mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Intro Text & Image Grid -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+      <!-- Text -->
+      <div>
+        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+          L'Associazione Italiana Studenti di Fisica (<strong class="text-paths-blue">AISF</strong>) organizza la prima
+          edizione della <strong class="text-paths-blue">Padova Theoretical School (PaThS)</strong>, un evento dal
+          respiro fortemente teorico pensato per gli studenti appassionati di fisica fondamentale.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          L'Università di Padova, con oltre <strong>800 anni di storia</strong>, rappresenta da sempre un punto saldo
+          della ricerca scientifica internazionale. PaThS nasce a fronte delle scuole AISF già consolidate — come LOT o
+          TIQIT — orientate prevalentemente verso settori della fisica applicata e sperimentale, con l'obiettivo di colmare
+          un vuoto: offrire uno spazio di approfondimento rigoroso sulla teoria.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Nonostante la vocazione teorica, verrà garantito un costante <strong>dialogo teoria–esperimento</strong>,
+          mostrando l'aspetto pratico e computazionale della ricerca teorica moderna.
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div class="relative rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+        <img
+          src="/images/first_image.jpg"
+          alt="Fisica teorica – PaThS"
+          class="w-full h-72 lg:h-96 object-cover object-center"
+          onerror="this.parentElement.classList.add('bg-gradient-to-br','from-paths-blue','to-blue-700'); this.style.display='none';"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-paths-blue/30 via-transparent to-transparent"></div>
+      </div>
+    </div>
+
+    <!-- Modulo Aree Tematiche -->
+    <Topics />
+
+    <!-- A chi è rivolto & Stats -->
+    <div class="bg-gradient-to-r from-paths-blue to-blue-800 rounded-2xl p-8 sm:p-12 text-white">
+      <div class="grid sm:grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="text-4xl font-black text-blue-200 mb-2">{eventInfo.participantsCount}</div>
+          <div class="text-sm font-medium text-white/80">
+            Partecipanti da tutta Italia<br />
+            <span class="text-white/50 text-xs">{eventInfo.participantsDetail}</span>
+          </div>
+        </div>
+        <div>
+          <div class="text-4xl font-black text-blue-200 mb-2">{eventInfo.schoolDays}</div>
+          <div class="text-sm font-medium text-white/80">
+            Giorni di scuola<br />
+            <span class="text-white/50 text-xs">{eventInfo.dates}</span>
+          </div>
+        </div>
+        <div>
+          <div class="text-4xl font-black text-blue-200 mb-2">{eventInfo.feeAccommodation}</div>
+          <div class="text-sm font-medium text-white/80">
+            Quota con alloggio<br />
+            <span class="text-white/70 text-xs">{eventInfo.feeNoAccommodation} – Quota senza alloggio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+

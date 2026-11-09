@@ -1,0 +1,141 @@
+---
+import { navLinks } from '../data/siteData';
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-gray-200/60 shadow-sm"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo / Brand -->
+      <a href="#hero" class="flex items-center gap-3 group scroll-link">
+        <div
+          class="w-9 h-9 rounded-lg bg-paths-blue flex items-center justify-center shadow-sm group-hover:bg-paths-accent transition-colors duration-200"
+        >
+          <span class="text-white font-bold font-mono text-xs tracking-tight">Ψ</span>
+        </div>
+        <div class="leading-tight">
+          <span class="font-bold text-paths-blue text-base tracking-tight">PaThS</span>
+          <span class="text-gray-400 text-xs block leading-none font-light">Padova · 2027</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+        {navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="scroll-link hover:text-paths-accent transition-colors duration-150"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- CTA + Hamburger -->
+      <div class="flex items-center gap-3">
+        <a
+          href="#register"
+          class="scroll-link hidden sm:inline-flex items-center gap-1.5 bg-paths-accent text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15"
+            ></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H9m9 0l-3-3m3 3l-3 3"></path>
+          </svg>
+          Iscriviti
+        </a>
+
+        <!-- Hamburger button -->
+        <button
+          id="menu-btn"
+          class="md:hidden p-2 rounded-lg text-gray-500 hover:text-paths-accent hover:bg-gray-100 transition-colors duration-150"
+          aria-label="Menu"
+        >
+          <svg id="icon-open" class="w-6 h-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-gray-100 mt-1">
+      <ul class="flex flex-col gap-1 pt-3 text-sm font-medium text-gray-600">
+        {navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="scroll-link block px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-paths-accent transition-colors"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div class="mt-3 px-3">
+        <a
+          href="#register"
+          class="scroll-link block text-center bg-paths-accent text-white text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Iscriviti
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  function openMobileMenu() {
+    mobileMenu?.classList.remove('hidden');
+    iconOpen?.classList.add('hidden');
+    iconClose?.classList.remove('hidden');
+    menuBtn?.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMobileMenu() {
+    mobileMenu?.classList.add('hidden');
+    iconOpen?.classList.remove('hidden');
+    iconClose?.classList.add('hidden');
+    menuBtn?.setAttribute('aria-expanded', 'false');
+  }
+
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu?.classList.contains('hidden');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+  }
+
+  // Close mobile menu on clicking any scroll-link inside it
+  mobileMenu?.querySelectorAll('a.scroll-link').forEach((link) => {
+    link.addEventListener('click', () => closeMobileMenu());
+  });
+</script>
+

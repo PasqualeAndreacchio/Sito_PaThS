@@ -1,0 +1,79 @@
+---
+import { faqList } from '../data/siteData';
+---
+
+<section id="faq" class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-16">
+      <span class="inline-block text-paths-accent font-mono text-xs font-semibold tracking-widest uppercase mb-3">
+        FAQ
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-paths-blue mb-4">Domande Frequenti</h2>
+      <div class="w-16 h-1 bg-paths-accent mx-auto rounded-full"></div>
+    </div>
+
+    <div class="space-y-3" id="faq-list">
+      {faqList.map((faq) => (
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
+          <button
+            class="faq-btn w-full flex justify-between items-center px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+          >
+            <span class="font-semibold text-paths-blue text-sm">{faq.question}</span>
+            <svg
+              class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0 ml-3 transition-transform duration-200"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5 text-sm text-gray-600 leading-relaxed bg-white">
+            <Fragment set:html={faq.answer} />
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item?.querySelector('.faq-answer');
+      const icon = btn.querySelector('.faq-icon');
+
+      if (!answer) return;
+
+      const isOpen = !answer.classList.contains('hidden');
+
+      // Close all other open items first
+      document.querySelectorAll('.faq-item').forEach((other) => {
+        const otherAnswer = other.querySelector('.faq-answer');
+        const otherIcon = other.querySelector('.faq-icon');
+        const otherBtn = other.querySelector('.faq-btn');
+        if (otherAnswer && other !== item) {
+          otherAnswer.classList.add('hidden');
+          otherIcon?.classList.remove('open');
+          otherBtn?.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      if (isOpen) {
+        answer.classList.add('hidden');
+        icon?.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        answer.classList.remove('hidden');
+        icon?.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+

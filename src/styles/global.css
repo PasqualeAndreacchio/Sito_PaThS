@@ -1,8 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* =========================================================
-   PaThS 2027 – Custom styles (complement to Tailwind CDN)
+   PaThS 2027 – Global styles
    ========================================================= */
 
-/* ---- Base ---- */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -21,20 +24,15 @@ body {
   box-shadow: 0 4px 24px rgba(26, 58, 92, 0.10);
 }
 
-/* ---- Hero parallax hint ---- */
-#hero {
-  min-height: 100svh;
-}
-
-/* Text-shadow per massima leggibilità sul backdrop fotografico */
+/* ---- Hero text shadow ---- */
 .hero-title {
-  text-shadow: 0 2px 20px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 .hero-subtitle {
-  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 #hero p {
-  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* ---- Day accordion ---- */
@@ -71,7 +69,7 @@ body {
   transform: rotate(45deg);
 }
 
-/* ---- Sponsor / topic cards ---- */
+/* ---- Cards hover ---- */
 .topic-card,
 .logistics-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -102,20 +100,4 @@ img {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* ---- Mobile menu animation ---- */
-#mobile-menu {
-  transition: max-height 0.3s ease, opacity 0.25s ease;
-}
-
-/* ---- Tailwind safelist extras ---- */
-/* These are needed because Tailwind CDN purges dynamically added classes */
-.border-paths-accent { border-color: #2563eb; }
-.text-paths-accent   { color: #2563eb; }
-.bg-paths-accent     { background-color: #2563eb; }
-.text-paths-blue     { color: #1a3a5c; }
-.bg-paths-blue       { background-color: #1a3a5c; }
-.border-paths-gold   { border-color: #d97706; }
-.bg-paths-gold       { background-color: #d97706; }
-.bg-paths-bg         { background-color: #f8fafc; }
 

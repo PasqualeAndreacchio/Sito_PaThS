@@ -1,0 +1,263 @@
+---
+import { eventInfo } from '../data/siteData';
+
+/**
+ * =============================================================================
+ * COME COLLEGARE QUESTO FORM A GOOGLE MODULI (Zero Backend):
+ * 1. Crea il tuo Google Form su Google Drive con i campi corrispondenti.
+ * 2. Clicca sui tre puntini in alto a destra nel form -> "Ottieni link precompilato".
+ * 3. Compila ogni campo con una parola riconoscibile (es. "NOME", "EMAIL", "ATENEO").
+ * 4. Clicca "Ottieni link" e copialo negli appunti.
+ * 5. L'URL conterrà:
+ *    - L'endpoint (da inserire in googleFormAction in siteData.ts, sostituendo /viewform con /formResponse)
+ *    - Gli ID dei campi (es. entry.123456789=NOME, entry.987654321=EMAIL)
+ * 6. Aggiorna i valori "name" dei campi qui sotto con i rispettivi "entry.XXXXX".
+ * =============================================================================
+ */
+
+const actionUrl = eventInfo.googleFormAction;
+const directFormUrl = eventInfo.googleFormUrl;
+---
+
+<section id="register" class="py-24 bg-gradient-to-br from-paths-blue via-blue-900 to-indigo-950 text-white relative overflow-hidden">
+  <!-- Sfondo decorativo con pattern -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <!-- Header Sezione -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-widest uppercase backdrop-blur-sm">
+        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+        Iscrizioni Edizione {eventInfo.edition}
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
+        Candidati per la Padova Theoretical School
+      </h2>
+      <p class="text-blue-200 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        Compila il modulo sottostante per inoltrare la tua candidatura. I posti sono limitati a <strong class="text-white">{eventInfo.participantsCount} partecipanti</strong> ({eventInfo.participantsDetail}).
+      </p>
+    </div>
+
+    <!-- Card del Form -->
+    <div class="bg-white text-gray-800 rounded-3xl p-6 sm:p-10 shadow-2xl border border-white/10">
+
+      <!-- Messaggio di avvenuta sottomissione (inizialmente nascosto) -->
+      <div id="form-success" class="hidden text-center py-10 space-y-4">
+        <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold">
+          ✓
+        </div>
+        <h3 class="text-2xl font-bold text-paths-blue">Candidatura inviata con successo!</h3>
+        <p class="text-gray-600 max-w-md mx-auto text-sm leading-relaxed">
+          Grazie per aver inviato la tua candidatura a PaThS 2027. Riceverai a breve una conferma e l'esito della selezione all'indirizzo email indicato.
+        </p>
+        <button
+          type="button"
+          id="btn-reset-form"
+          class="inline-block mt-4 text-xs font-semibold text-paths-accent hover:underline cursor-pointer"
+        >
+          Invia un'altra risposta
+        </button>
+      </div>
+
+      <!-- Form nativo collegato a Google Forms via hidden iframe -->
+      <form
+        id="native-reg-form"
+        action={actionUrl}
+        method="POST"
+        target="hidden_iframe"
+        class="space-y-6"
+      >
+        <div class="grid sm:grid-cols-2 gap-6">
+
+          <!-- Nome e Cognome -->
+          <div>
+            <label for="field-name" class="block text-xs font-bold text-paths-blue uppercase tracking-wider mb-2">
+              Nome e Cognome <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="field-name"
+              name="entry.1000001"
+              required
+              placeholder="es. Galileo Galilei"
+              class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-paths-accent focus:ring-2 focus:ring-paths-accent/20 outline-none transition-all text-sm bg-gray-50 focus:bg-white"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="field-email" class="block text-xs font-bold text-paths-blue uppercase tracking-wider mb-2">
+              Indirizzo Email <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="field-email"
+              name="entry.1000002"
+              required
+              placeholder="es. galileo@studenti.unipd.it"
+              class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-paths-accent focus:ring-2 focus:ring-paths-accent/20 outline-none transition-all text-sm bg-gray-50 focus:bg-white"
+            />
+          </div>
+
+          <!-- Telefono -->
+          <div>
+            <label for="field-phone" class="block text-xs font-bold text-paths-blue uppercase tracking-wider mb-2">
+              Telefono / WhatsApp <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="tel"
+              id="field-phone"
+              name="entry.1000003"
+              required
+              placeholder="es. +39 340 1234567"
+              class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-paths-accent focus:ring-2 focus:ring-paths-accent/20 outline-none transition-all text-sm bg-gray-50 focus:bg-white"
+            />
+          </div>
+
+          <!-- Università / Ente -->
+          <div>
+            <label for="field-university" class="block text-xs font-bold text-paths-blue uppercase tracking-wider mb-2">
+              Università o Ente <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="field-university"
+              name="entry.1000004"
+              required
+              placeholder="es. Università degli Studi di Padova"
+              class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-paths-accent focus:ring-2 focus:ring-paths-accent/20 outline-none transition-all text-sm bg-gray-50 focus:bg-white"
+            />
+          </div>
+
+          <!-- Percorso di studi -->
+          <div>
+            <label for="field-level" class="block text-xs font-bold text-paths-blue uppercase tracking-wider mb-2">
+              Corso di Studi & Anno <span class="text-red-500">*</span>
+            </label>
+            <select
+              id="field-level"
+              name="entry.1000005"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-paths-accent focus:ring-2 focus:ring-paths-accent/20 outline-none transition-all text-sm bg-gray-50 focus:bg-white"
+            >
+              <option value="" disabled selected>Seleziona il tuo percorso</option>
+              <option value="Triennale 2° Anno">Laurea Triennale – 2° Anno</option>
+              <option value="Triennale 3° Anno">Laurea Triennale – 3° Anno</option>
+              <option value="Magistrale 1° Anno">Laurea Magistrale – 1° Anno</option>
+              <option value="Magistrale 2° Anno">Laurea Magistrale – 2° Anno</option>
+              <option value="Dottorato">Dottorato di Ricerca (PhD)</option>
+              <option value="Altro">Altro / Neolaureato</option>
+            </select>
+          </div>
+
+          <!-- Quota e Alloggio -->
+          <div>
+            <label class="block text-xs font-bold text-paths-blue uppercase tracking-wider mb-2">
+              Opzione di Quota <span class="text-red-500">*</span>
+            </label>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:border-paths-accent cursor-pointer transition-colors text-xs font-medium">
+                <input type="radio" name="entry.1000006" value="Con alloggio (120€)" checked class="text-paths-accent focus:ring-paths-accent" />
+                <span>Con alloggio (120€)</span>
+              </label>
+              <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:border-paths-accent cursor-pointer transition-colors text-xs font-medium">
+                <input type="radio" name="entry.1000006" value="Senza alloggio (70€)" class="text-paths-accent focus:ring-paths-accent" />
+                <span>Senza alloggio (70€)</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Note o Esigenze Alimentari -->
+        <div>
+          <label for="field-notes" class="block text-xs font-bold text-paths-blue uppercase tracking-wider mb-2">
+            Motivazione, Note o Esigenze Alimentari
+          </label>
+          <textarea
+            id="field-notes"
+            name="entry.1000007"
+            rows="3"
+            placeholder="Breve motivazione per la partecipazione, eventuali allergie o intolleranze alimentari..."
+            class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-paths-accent focus:ring-2 focus:ring-paths-accent/20 outline-none transition-all text-sm bg-gray-50 focus:bg-white resize-y"
+          ></textarea>
+        </div>
+
+        <!-- Consenso Privacy -->
+        <div class="flex items-start gap-3 pt-2">
+          <input
+            type="checkbox"
+            id="privacy-check"
+            required
+            class="mt-1 rounded text-paths-accent focus:ring-paths-accent cursor-pointer"
+          />
+          <label for="privacy-check" class="text-xs text-gray-500 leading-relaxed cursor-pointer select-none">
+            Acconsento al trattamento dei dati personali ai fini dell'organizzazione dell'evento PaThS {eventInfo.edition} nel rispetto del GDPR.
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-paths-accent text-white font-bold text-base px-8 py-3.5 rounded-xl hover:bg-blue-700 transition-all duration-200 shadow-lg shadow-blue-700/25 cursor-pointer"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l3 3m0 0l-3 3m3-3H9" />
+            </svg>
+            Invia Candidatura
+          </button>
+
+          <!-- Alternativa Google Form esterno -->
+          <a
+            href={directFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs text-gray-500 hover:text-paths-accent transition-colors flex items-center gap-1 text-center"
+          >
+            <span>Apri direttamente su Google Moduli</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+      </form>
+
+      <!-- Iframe invisibile per la sottomissione senza reload -->
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" tabindex="-1"></iframe>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('native-reg-form') as HTMLFormElement | null;
+  const successBox = document.getElementById('form-success');
+  const resetBtn = document.getElementById('btn-reset-form');
+  const iframe = document.getElementById('hidden_iframe');
+  let submitted = false;
+
+  if (form) {
+    form.addEventListener('submit', () => {
+      submitted = true;
+      // Breve ritardo per attendere la risposta dell'iframe
+      setTimeout(() => {
+        form.classList.add('hidden');
+        successBox?.classList.remove('hidden');
+      }, 500);
+    });
+  }
+
+  if (resetBtn && form && successBox) {
+    resetBtn.addEventListener('click', () => {
+      form.reset();
+      form.classList.remove('hidden');
+      successBox.classList.add('hidden');
+      submitted = false;
+    });
+  }
+</script>
+

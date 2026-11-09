@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Program from '../components/Program.astro';
+import Locations from '../components/Locations.astro';
+import Logistics from '../components/Logistics.astro';
+import Sponsors from '../components/Sponsors.astro';
+import Faq from '../components/Faq.astro';
+import RegistrationForm from '../components/RegistrationForm.astro';
+import Footer from '../components/Footer.astro';
+import BackToTop from '../components/BackToTop.astro';
+import { eventInfo } from '../data/siteData';
+---
+
+<Layout title={eventInfo.title} description={eventInfo.subtitle}>
+  <!-- Barra di Navigazione fissa -->
+  <Navbar />
+
+  <!-- Hero Section -->
+  <main>
+    <Hero />
+    <About />
+    <Program />
+    <Locations />
+    <Logistics />
+    <Sponsors />
+    <Faq />
+    <RegistrationForm />
+  </main>
+
+  <!-- Footer & Contatti -->
+  <Footer />
+
+  <!-- Pulsante Torna in Cima -->
+  <BackToTop />
+</Layout>
+
