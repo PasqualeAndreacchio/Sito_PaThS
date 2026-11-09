@@ -1,6 +1,6 @@
 // =============================================================================
-// PaThS 2027 – Dati del Sito e Contenuti Modificabili
-// Chiunque debba aggiornare testi, date o sezioni può farlo direttamente qui!
+// PaThS 2027 – Dati del Sito e Contenuti Ufficiali
+// Allineati alla Proposta di Progetto Ufficiale PaThS (AISF Comitato Locale di Padova)
 // =============================================================================
 
 export interface TopicItem {
@@ -18,7 +18,9 @@ export interface TopicItem {
 export interface DayScheduleRow {
   time: string;
   title: string;
-  speakerOrPlace: string;
+  speaker?: string;
+  location?: string;
+  speakerOrPlace?: string;
   speakerRole?: string;
   tag?: string;
 }
@@ -50,8 +52,8 @@ export interface LocationItem {
 // ---- Info Generali Evento ----
 export const eventInfo = {
   edition: "2027",
-  title: "PaThS 2027 – Padova Theoretical School",
-  subtitle: "Prima edizione della Padova Theoretical School",
+  title: "PaThS 2027 – Padova Theoretical Physics School",
+  subtitle: "Prima edizione della Padova Theoretical Physics School",
   dates: "15–19 Marzo 2027",
   city: "Padova",
   location: "Università degli Studi di Padova",
@@ -59,18 +61,15 @@ export const eventInfo = {
   localCommittee: "Comitato Locale di Padova",
   email: "paths@ai-sf.it",
   instagramAisf: "https://www.instagram.com/aisf_padova?exln=MTN1MzRpYmg3ejVhZg==",
-  // Sostituisci "#" con il link del profilo Instagram di PaThS quando sarà creato:
-  instagramPaths: "#",
+  instagramPaths: "https://www.instagram.com/paths.padova",
   websiteAISF: "https://ai-sf.it",
   participantsCount: "48",
-  participantsDetail: "40 nazionali + 8 posti riservati UniPd",
+  participantsDetail: "40 nazionali (con alloggio) + 8 riservati UniPd (senza alloggio)",
   schoolDays: "5",
   feeAccommodation: "120€",
   feeNoAccommodation: "70€",
   
-  // Link predefinito a Google Form (può essere sovrascritto o integrato col form nativo)
   googleFormUrl: "https://forms.gle/INSERISCI_QUI_IL_LINK",
-  // Action URL del Google Form per submit trasparente (se desiderato)
   googleFormAction: "https://docs.google.com/forms/d/e/INSERISCI_FORM_ID_QUI/formResponse",
 };
 
@@ -91,41 +90,41 @@ export const featuredTopic: TopicItem = {
   id: "ads-cft",
   symbol: "∂",
   title: "AdS/CFT e Olografia",
-  badge: "Focus Edizione Corrente",
-  pill: "Corrispondenza AdS/CFT",
-  description: "Dualità tra gravità quantistica e teorie di campo, principio olografico e applicazioni.",
+  badge: "Focus Edizione 2027",
+  pill: "Modulo CFT (prof. Volpato) + Modulo AdS (prof. Massai)",
+  description: "Approfondimento organico della corrispondenza AdS/CFT: dualità tra gravità quantistica nello spazio anti-de Sitter e teorie di campo conformi al bordo, principio olografico e applicazioni avanzate.",
   link: "https://it.wikipedia.org/wiki/Corrispondenza_AdS/CFT",
-  linkText: "Approfondisci su Wikipedia",
+  linkText: "Approfondisci la corrispondenza AdS/CFT",
 };
 
 export const generalTopics: TopicItem[] = [
   {
     id: "qg-cosmo",
     symbol: "∞",
-    title: "Quantum Gravity, Cosmologia",
-    description: "Teoria delle stringhe, gravità quantistica e AdS/CFT",
+    title: "Quantum Gravity & String Theory",
+    description: "Gravità quantistica, cosmologia teorica e teoria delle stringhe.",
   },
   {
     id: "cond-matt",
     symbol: "ψ",
-    title: "Materia Condensata",
-    description: "Fenomeni emergenti e fasi esotiche della materia",
+    title: "Fisica della Materia Condensata",
+    description: "Fasi esotiche, ordine topologico e fenomeni quantistici emergenti.",
   },
   {
     id: "particle-phys",
     symbol: "⚛",
-    title: "Fisica delle Particelle",
-    description: "Interazioni fondamentali e fisica ad alta energia",
+    title: "Particelle & Interazioni Fondamentali",
+    description: "Modello Standard, teorie di gauge e fisica delle alte energie.",
   },
   {
     id: "quantum-info",
     symbol: "Q",
-    title: "Informazione Quantistica",
-    description: "Sistemi complessi e computazione quantistica",
+    title: "Informazione Quantistica & Sistemi Complessi",
+    description: "Entanglement quantistico, dinamiche non lineari e complessità teorica.",
   },
 ];
 
-// ---- Programma delle 5 Giornate ----
+// ---- Programma delle 5 Giornate (Estratto fedelmente dal Programma Ufficiale) ----
 export const programDays: DayProgram[] = [
   {
     id: "day1",
@@ -133,11 +132,36 @@ export const programDays: DayProgram[] = [
     dayName: "Lunedì",
     title: "Accoglienza e Apertura",
     schedule: [
-      { time: "09:00–14:30", title: "Arrivi e Registrazione partecipanti", speakerOrPlace: "Hotello Padova" },
-      { time: "14:30–15:30", title: "Cerimonia di Apertura", speakerOrPlace: "Palazzo Bo" },
-      { time: "15:30–16:30", title: "☕ Coffee Break", speakerOrPlace: "Palazzo Bo" },
-      { time: "16:30–18:00", title: "Talk di Apertura", speakerOrPlace: "Palazzo Bo" },
-      { time: "20:30–23:00", title: "🍺 Physics & Drinks – Aperitivo con spritz padovano", speakerOrPlace: "Birrone Padova" },
+      {
+        time: "09:00 – 14:30",
+        title: "Arrivi e Registrazione partecipanti",
+        location: "Hotel (Hotello Padova)",
+        tag: "Check-in",
+      },
+      {
+        time: "14:30 – 15:30",
+        title: "Cerimonia di Apertura",
+        location: "Aula Rostagni DFA",
+        tag: "Apertura Istituzionale",
+      },
+      {
+        time: "15:30 – 16:30",
+        title: "Coffee Break",
+        location: "Giardino DFA",
+        tag: "Pausa",
+      },
+      {
+        time: "16:30 – 18:00",
+        title: "Talk di Apertura",
+        location: "Aula Rostagni DFA",
+        tag: "Opening Talk",
+      },
+      {
+        time: "20:30 – 23:00",
+        title: "Physics & Drinks – Aperitivo di Benvenuto",
+        location: "Birrone Padova",
+        tag: "Social AISF",
+      },
     ],
   },
   {
@@ -146,15 +170,63 @@ export const programDays: DayProgram[] = [
     dayName: "Martedì",
     title: "Didattica e Workshop",
     schedule: [
-      { time: "09:00–10:30", title: "Lecture 1 – Modulo 1", speakerOrPlace: "Scuola Galileiana" },
-      { time: "10:30–11:00", title: "☕ Coffee Break", speakerOrPlace: "Scuola Galileiana" },
-      { time: "11:00–12:30", title: "Lecture 2 – Modulo 1", speakerOrPlace: "Scuola Galileiana" },
-      { time: "13:00–14:30", title: "🍽️ Pausa Pranzo", speakerOrPlace: "Mensa convenzionata" },
-      { time: "14:30–16:00", title: "Lecture 1 – Modulo 2", speakerOrPlace: "Scuola Galileiana" },
-      { time: "16:00–16:30", title: "☕ Coffee Break", speakerOrPlace: "Scuola Galileiana" },
-      { time: "16:30–18:00", title: "💻 Workshop Computazionale", speakerOrPlace: "Aula Informatica / Lab" },
-      { time: "19:00–20:30", title: "🍽️ Cena convenzionata", speakerOrPlace: "Padova" },
-      { time: "20:30–23:00", title: "🏛️ Caccia al Tesoro / Tour di Padova", speakerOrPlace: "Centro Storico di Padova" },
+      {
+        time: "09:00 – 10:30",
+        title: "Lecture 1 (Modulo CFT)",
+        speaker: "Prof. Roberto Volpato (UniPD - INFN)",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Modulo CFT",
+      },
+      {
+        time: "10:30 – 11:00",
+        title: "Coffee Break",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Pausa",
+      },
+      {
+        time: "11:00 – 12:30",
+        title: "Lecture 2 (Modulo CFT)",
+        speaker: "Prof. Roberto Volpato (UniPD - INFN)",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Modulo CFT",
+      },
+      {
+        time: "13:00 – 14:30",
+        title: "Pausa Pranzo",
+        location: "Mensa convenzionata ESU",
+        tag: "Pranzo",
+      },
+      {
+        time: "14:30 – 16:00",
+        title: "Lecture 1 (Modulo AdS)",
+        speaker: "Prof. Stefano Massai (UniPD)",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Modulo AdS",
+      },
+      {
+        time: "16:00 – 16:30",
+        title: "Coffee Break",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Pausa",
+      },
+      {
+        time: "16:30 – 18:00",
+        title: "Workshop Metodologico e Computazionale",
+        location: "INAF, La Specola (TBD)",
+        tag: "Workshop",
+      },
+      {
+        time: "19:00 – 20:30",
+        title: "Cena convenzionata",
+        location: "Ristorante convenzionato (TBD)",
+        tag: "Cena",
+      },
+      {
+        time: "20:30 – 23:00",
+        title: "Caccia al Tesoro Culturale / Tour di Padova",
+        location: "Centro Storico di Padova",
+        tag: "Social AISF",
+      },
     ],
   },
   {
@@ -163,29 +235,111 @@ export const programDays: DayProgram[] = [
     dayName: "Mercoledì",
     title: "Moduli e Trasferta Culturale",
     schedule: [
-      { time: "09:00–10:30", title: "Lecture 3 – Modulo 1", speakerOrPlace: "Scuola Galileiana" },
-      { time: "10:30–11:00", title: "☕ Coffee Break", speakerOrPlace: "Scuola Galileiana" },
-      { time: "11:00–12:30", title: "Lecture 2 – Modulo 2", speakerOrPlace: "Scuola Galileiana" },
-      { time: "13:00–14:30", title: "🍽️ Pausa Pranzo", speakerOrPlace: "Mensa convenzionata" },
-      { time: "14:30–16:00", title: "Lecture 3 – Modulo 2", speakerOrPlace: "Scuola Galileiana" },
-      { time: "16:00–17:00", title: "🔬 Research Talk", speakerOrPlace: "Scuola Galileiana" },
-      { time: "18:00–22:00", title: "🚂 Bacaro Tour a Venezia", speakerOrPlace: "Escursione culturale a Venezia in treno" },
-      { time: "22:00 – …", title: "🌙 Mercolegin (libero per chi vuole)", speakerOrPlace: "Padova" },
+      {
+        time: "09:00 – 10:30",
+        title: "Lecture 3 (Modulo CFT)",
+        speaker: "Prof. Roberto Volpato (UniPD - INFN)",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Modulo CFT",
+      },
+      {
+        time: "10:30 – 11:00",
+        title: "Coffee Break",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Pausa",
+      },
+      {
+        time: "11:00 – 12:30",
+        title: "Lecture 2 (Modulo AdS)",
+        speaker: "Prof. Stefano Massai (UniPD)",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Modulo AdS",
+      },
+      {
+        time: "13:00 – 14:30",
+        title: "Pausa Pranzo",
+        location: "Mensa convenzionata ESU",
+        tag: "Pranzo",
+      },
+      {
+        time: "14:30 – 16:00",
+        title: "Lecture 3 (Modulo AdS)",
+        speaker: "Prof. Stefano Massai (UniPD)",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Modulo AdS",
+      },
+      {
+        time: "16:00 – 17:00",
+        title: "Research Talk",
+        speaker: "Ricercatori Sezione INFN di Padova",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Research Talk",
+      },
+      {
+        time: "18:00 – 22:00",
+        title: "Bacaro Tour a Venezia (escursione sociale in treno)",
+        location: "Venezia",
+        tag: "Escursione Culturale",
+      },
+      {
+        time: "22:00 – late",
+        title: "Mercolegin (serata libera per chi desidera)",
+        location: "Padova",
+        tag: "Social",
+      },
     ],
   },
   {
     id: "day4",
     dayNumber: 4,
     dayName: "Giovedì",
-    title: "Lectio Magistralis e Poster Session",
+    title: "Lectio Magistralis e Poster",
     schedule: [
-      { time: "09:00–11:00", title: "🎓 Lectio Magistralis", speakerOrPlace: "Palazzo Bo" },
-      { time: "11:00–12:30", title: "📋 Poster Session PhD & Aperitivo / Coffee Break", speakerOrPlace: "Atrio / Chiostro" },
-      { time: "12:30–14:30", title: "🍽️ Pranzo & Tempo libero", speakerOrPlace: "Centro di Padova" },
-      { time: "14:30–15:30", title: "Parallel Sessions – Parte 1", speakerOrPlace: "Aule Parallele DFA" },
-      { time: "15:30–16:00", title: "☕ Coffee Break", speakerOrPlace: "DFA" },
-      { time: "16:00–17:00", title: "Parallel Sessions – Parte 2", speakerOrPlace: "Aule Parallele DFA" },
-      { time: "20:00–24:00", title: "🎉 Serata Finale (cena sociale inclusa)", speakerOrPlace: "Ristorante storico Padova" },
+      {
+        time: "09:00 – 11:00",
+        title: "Lectio Magistralis",
+        speaker: "Contributo scientifico INAF",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Lectio Magistralis",
+      },
+      {
+        time: "11:00 – 12:30",
+        title: "Poster Session PhD & Aperitivo / Coffee Break",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Poster Session",
+      },
+      {
+        time: "12:30 – 14:30",
+        title: "Pranzo & Tempo libero",
+        location: "Centro di Padova",
+        tag: "Pranzo",
+      },
+      {
+        time: "14:30 – 15:30",
+        title: "Parallel Sessions (Parte 1)",
+        speaker: "Sessioni proposte dai partecipanti",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Parallel Sessions",
+      },
+      {
+        time: "15:30 – 16:00",
+        title: "Coffee Break",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Pausa",
+      },
+      {
+        time: "16:00 – 17:00",
+        title: "Parallel Sessions (Parte 2)",
+        speaker: "Sessioni proposte dai partecipanti",
+        location: "Palazzo del Monte di Pietà",
+        tag: "Parallel Sessions",
+      },
+      {
+        time: "20:00 – 24:00",
+        title: "Serata Finale (Cena sociale inclusa)",
+        location: "Birrone Padova",
+        tag: "Cena Sociale",
+      },
     ],
   },
   {
@@ -194,54 +348,90 @@ export const programDays: DayProgram[] = [
     dayName: "Venerdì",
     title: "Chiusura e Saluti",
     schedule: [
-      { time: "10:30–12:00", title: "🎓 Lectio Magistralis", speakerOrPlace: "Palazzo Bo" },
-      { time: "12:00–13:00", title: "🏛️ Saluti istituzionali & Chiusura Scuola", speakerOrPlace: "Palazzo Bo" },
-      { time: "13:00 →", title: "🚆 Partenze partecipanti", speakerOrPlace: "Stazione Centrale di Padova" },
+      {
+        time: "10:30 – 12:00",
+        title: "Lectio Magistralis Conclusiva",
+        speaker: "Prof. Gianguido Dall'Agata (UniPD - INFN)",
+        location: "Palazzo Bo, Aula Nievo",
+        tag: "Lectio Magistralis",
+      },
+      {
+        time: "12:00 – 13:00",
+        title: "Saluti istituzionali & Chiusura Scuola",
+        location: "Palazzo Bo, Aula Nievo",
+        tag: "Chiusura",
+      },
+      {
+        time: "13:00 in poi",
+        title: "Partenze partecipanti",
+        location: "Stazione Centrale di Padova",
+        tag: "Partenze",
+      },
     ],
   },
 ];
 
-// ---- Luoghi dell'Evento ----
+// ---- Luoghi dell'Evento (Allineati al Progetto) ----
 export const locationsList: LocationItem[] = [
   {
+    id: "monte-pieta",
+    badge: "Sede Didattica Principale",
+    title: "Palazzo del Monte di Pietà",
+    description: "Sede centrale delle lezioni teoriche dei Moduli CFT e AdS, dei research talks INFN, della Poster Session PhD, della Lectio Magistralis INAF e delle sessioni parallele.",
+    address: "Piazza Duomo, 14 – Padova",
+    image: "/images/palazzo_bo.jpg",
+    alt: "Palazzo del Monte di Pietà – Sede didattica PaThS",
+    mapLink: "https://maps.google.com/?q=Palazzo+del+Monte+di+Pieta+Piazza+Duomo+Padova",
+  },
+  {
     id: "dfa",
-    badge: "Didattica & Lab",
-    title: 'Dip. di Fisica e Astronomia "G. Galilei"',
-    description: "Sede centrale per laboratori computazionali, sessioni di calcolo numerico e aule didattiche attrezzate per le sessioni parallele.",
+    badge: "Apertura & Registrazione",
+    title: 'DFA "G. Galilei" – Aula Rostagni',
+    description: "L'Aula Rostagni e il Chiostro/Giardino del Dipartimento di Fisica e Astronomia ospiteranno la Cerimonia di Apertura ufficiale, il talk introduttivo e il welcome coffee break.",
     address: "Via Francesco Marzolo, 8 – Padova",
     image: "/images/dfa.jpg",
-    alt: "Dipartimento di Fisica e Astronomia G. Galilei",
+    alt: "Dipartimento di Fisica e Astronomia G. Galilei – Aula Rostagni",
     mapLink: "https://maps.google.com/?q=Dipartimento+di+Fisica+e+Astronomia+Galileo+Galilei+Padova",
   },
   {
-    id: "galileiana",
-    badge: "Lectures & Seminari",
-    title: "Scuola Galileiana di Studi Superiori",
-    description: "La scuola d'eccellenza dell'Ateneo: ospiterà le lectures teoriche dei Moduli 1 e 2, i research talk e i momenti di approfondimento scientifico.",
-    address: "Via Francesco Marzolo, 6 – Padova",
-    image: "/images/galileiana.jpg",
-    alt: "Scuola Galileiana di Studi Superiori",
-    mapLink: "https://maps.google.com/?q=Scuola+Galileiana+di+Studi+Superiori+Padova",
-  },
-  {
     id: "palazzo-bo",
-    badge: "Apertura & Chiusura",
-    title: "Palazzo Bo – Sede Storica",
-    description: "Cuore monumentale dell'Università di Padova: accoglierà la Cerimonia di Apertura, il Talk inaugurale, le Lectio Magistralis e i saluti istituzionali.",
+    badge: "Lectio Magistralis & Chiusura",
+    title: "Palazzo Bo – Aula Nievo",
+    description: "La prestigiosa sede storica centrale dell'Ateneo patavino accoglierà la Lectio Magistralis conclusiva del prof. Dall'Agata e i saluti istituzionali finali.",
     address: "Via VIII Febbraio, 2 – Padova",
     image: "/images/unipd.jpg",
     alt: "Palazzo Bo – Università degli Studi di Padova",
     mapLink: "https://maps.google.com/?q=Palazzo+Bo+Padova",
   },
   {
+    id: "specola",
+    badge: "Workshop Pratico",
+    title: "INAF – Osservatorio La Specola",
+    description: "La storica torre e osservatorio astronomico della Specola accoglierà la sessione laboratoriale e di calcolo computazionale d'avanguardia.",
+    address: "Vicolo dell'Osservatorio, 5 – Padova",
+    image: "/images/galileiana.jpg",
+    alt: "INAF Osservatorio Astronomico La Specola Padova",
+    mapLink: "https://maps.google.com/?q=Osservatorio+Astronomico+La+Specola+Padova",
+  },
+  {
     id: "hotello",
-    badge: "Alloggio & Check-in",
+    badge: "Alloggio Convenzionato",
     title: "Hotello Padova",
-    description: "Struttura moderna e confortevole a circa 10 minuti a piedi dalla stazione centrale di Padova e vicinissima a tutte le sedi delle lezioni.",
-    address: "Corso del Popolo, 2 – Padova",
+    description: "Struttura moderna e centralissima riservata ai 40 partecipanti della quota con alloggio, situata a soli 10 minuti a piedi dalla stazione FS e da tutte le aule.",
+    address: "Via Magarotto, 2 – Padova",
     image: "/images/hotello.jpg",
     alt: "Hotello Padova – Alloggio partecipanti",
     mapLink: "https://maps.google.com/?q=Hotello+Padova",
+  },
+  {
+    id: "birrone",
+    badge: "Eventi Sociali & Gala",
+    title: "Birrone Padova",
+    description: "Punto di riferimento conviviale padovano: ospiterà l'aperitivo di benvenuto Physics & Drinks del lunedì e la Cena Sociale conclusiva del giovedì.",
+    address: "Via Belzoni, 18 – Padova",
+    image: "/images/padova.jpg",
+    alt: "Birrone Padova – Eventi sociali PaThS",
+    mapLink: "https://maps.google.com/?q=Birrone+Padova+Via+Belzoni",
   },
 ];
 
@@ -249,26 +439,26 @@ export const locationsList: LocationItem[] = [
 export const faqList: FaqItem[] = [
   {
     question: "Chi può partecipare a PaThS?",
-    answer: "PaThS è <strong>aperta a tutti gli studenti di Fisica</strong> afferenti ad AISF. Il livello delle lezioni e l'impostazione dell'evento sono pensati principalmente per studenti del <strong>3° anno della Triennale e dell'inizio della Magistrale</strong>, ma sono benvenuti anche dottorandi e studenti di anni successivi.",
+    answer: "PaThS è <strong>aperta a tutti gli studenti di Fisica</strong> afferenti ad AISF. L'offerta scientifica è calibrata specificamente per studenti del <strong>3° anno della Triennale, studenti di Laurea Magistrale e Dottorandi</strong> interessati alla fisica teorica contemporanea.",
   },
   {
-    question: "Quanto costa partecipare?",
-    answer: "Sono previste due opzioni di iscrizione:<br />• <strong>120€ – Quota con alloggio:</strong> include alloggio in struttura convenzionata, tutti i pasti (pranzi e cene), coffee break, transfer per l'escursione a Venezia, welcome kit e partecipazione a tutte le attività scientifiche e sociali.<br />• <strong>70€ – Quota senza alloggio:</strong> include tutti i pasti (pranzi e cene), coffee break, transfer per l'escursione a Venezia, welcome kit e partecipazione a tutte le attività scientifiche e sociali.<br />Le quote sono pensate per essere massimamente accessibili a tutti gli studenti.",
+    question: "Quanto costa partecipare e cosa comprende la quota?",
+    answer: "Sono previste due quote calmierate grazie ai contributi AISF e istituzionali:<br />• <strong>120€ – Quota con alloggio (40 posti nazionali):</strong> comprende 4 notti presso Hotello Padova, tutti i pasti (pranzi e cene convenzionate o e-coupon mensa), coffee break, cena sociale al Birrone Padova, biglietto treno a/r per l'escursione sociale a Venezia, welcome kit didattico e accesso completo a tutte le lezioni, workshop e talks.<br />• <strong>70€ – Quota senza alloggio (8 posti riservati studenti UniPD):</strong> comprende tutti i pasti (pranzi e cene), coffee break, cena sociale, transfer per l'escursione a Venezia, kit studente e accesso integrale a tutte le sessioni scientifiche e sociali.",
   },
   {
-    question: "Dove si svolge l'evento e come ci si arriva?",
-    answer: "L'evento si svolge a <strong>Padova</strong>, principalmente presso il Dipartimento di Fisica e Astronomia, la Scuola Galileiana e Palazzo Bo, sede centrale dell'Università. L'alloggio (Hotello Padova) si trova a circa 10 minuti a piedi dalla Stazione Centrale. Tutti gli spostamenti durante la scuola avverranno a piedi, senza necessità di trasporti pubblici aggiuntivi.",
+    question: "Dove si svolgono le lezioni e le attività?",
+    answer: "Le attività didattiche e sociali sono tutte nel centro di Padova e raggiungibili comodamente a piedi:<br />• <strong>Palazzo del Monte di Pietà:</strong> sede didattica principale per le lectures dei Moduli CFT e AdS, research talks, sessioni parallele e poster session.<br />• <strong>Aula Rostagni (DFA):</strong> cerimonia e talk di apertura.<br />• <strong>Palazzo Bo (Aula Nievo):</strong> Lectio Magistralis conclusiva e chiusura istituzionale.<br />• <strong>INAF La Specola:</strong> workshop computazionale.<br />• <strong>Birrone Padova:</strong> eventi sociali (Physics & Drinks e Serata Finale).",
   },
   {
-    question: "Quali sono i temi scientifici trattati?",
-    answer: "Ogni anno viene scelto un <strong>topic principale</strong> attorno a cui ruota la scuola (per questa edizione: <strong>AdS/CFT e Olografia</strong>), approfondito in dettaglio tramite lectures modulari. Le aree di interesse comprendono Quantum Gravity, Cosmologia e Teoria delle Stringhe, Fisica della Materia Condensata, Fisica delle Particelle ed Interazioni Fondamentali, Informazione Quantistica e Sistemi Complessi.",
+    question: "Quali sono i moduli scientifici e i docenti di questa edizione?",
+    answer: "L'edizione 2027 ruota attorno all'approfondimento della corrispondenza <strong>AdS/CFT e Olografia</strong>:<br />• <strong>Modulo CFT (3 lezioni):</strong> tenuto dal <em>prof. Roberto Volpato</em> (Università di Padova - INFN).<br />• <strong>Modulo AdS (3 lezioni):</strong> tenuto dal <em>prof. Stefano Massai</em> (Università di Padova).<br />• <strong>Lectio Magistralis:</strong> <em>prof. Gianguido Dall'Agata</em> (UniPD - INFN) e contributo <em>INAF</em>.<br />• <strong>Research Talks & Workshop:</strong> contributi di ricercatori INFN, workshop computazionale e poster session PhD.",
   },
   {
-    question: "Ci sarà anche un programma sociale?",
-    answer: "<p class=\"mb-3\">Assolutamente sì! PaThS integra le tradizionali attività sociali AISF per favorire il networking, la condivisione e il confronto informale tra tutti i partecipanti:</p><ul class=\"space-y-2 pl-1\"><li class=\"flex items-start gap-2.5\"><span class=\"text-paths-accent font-bold mt-0.5\">•</span><span><strong>Physics & Drinks:</strong> aperitivo tipico di benvenuto con lo spritz padovano al Birrone Padova.</span></li><li class=\"flex items-start gap-2.5\"><span class=\"text-paths-accent font-bold mt-0.5\">•</span><span><strong>Caccia al Tesoro Culturale & Tour:</strong> attività a squadre per le vie e le piazze del centro storico di Padova.</span></li><li class=\"flex items-start gap-2.5\"><span class=\"text-paths-accent font-bold mt-0.5\">•</span><span><strong>Bacaro Tour a Venezia:</strong> escursione culturale del mercoledì sera in treno alla scoperta dei bacari veneziani (con eventuale serata 'Mercolegin' a Padova).</span></li><li class=\"flex items-start gap-2.5\"><span class=\"text-paths-accent font-bold mt-0.5\">•</span><span><strong>Serata Finale:</strong> evento di chiusura con cena sociale inclusa per tutti i partecipanti.</span></li></ul>",
+    question: "Qual è il programma sociale e culturale?",
+    answer: "<p class=\"mb-3\">PaThS integra momenti scientifici e convivialità secondo la migliore tradizione AISF:</p><ul class=\"space-y-2 pl-1\"><li class=\"flex items-start gap-2.5\"><span class=\"text-terracotta font-bold mt-0.5\">•</span><span><strong>Lunedì:</strong> <em>Physics & Drinks</em> con aperitivo e spritz padovano al Birrone Padova.</span></li><li class=\"flex items-start gap-2.5\"><span class=\"text-terracotta font-bold mt-0.5\">•</span><span><strong>Martedì:</strong> <em>Caccia al Tesoro Culturale / Tour di Padova</em> a squadre tra le piazze storiche.</span></li><li class=\"flex items-start gap-2.5\"><span class=\"text-terracotta font-bold mt-0.5\">•</span><span><strong>Mercoledì:</strong> Trasferta in treno e <em>Bacaro Tour a Venezia</em>, seguito da Mercolegin a Padova per chi lo desidera.</span></li><li class=\"flex items-start gap-2.5\"><span class=\"text-terracotta font-bold mt-0.5\">•</span><span><strong>Giovedì:</strong> <em>Serata Finale</em> con cena sociale inclusa al Birrone Padova.</span></li></ul>",
   },
   {
     question: "Come faccio a iscrivermi?",
-    answer: "Puoi iscriverti tramite il form ufficiale cliccando sul pulsante <strong>'Iscriviti Ora'</strong> in cima alla pagina. Per qualsiasi domanda o chiarimento, puoi contattarci via email all'indirizzo <a href=\"mailto:paths@ai-sf.it\" class=\"text-paths-accent hover:underline\">paths@ai-sf.it</a> oppure scriverci in direct sulla pagina <a href=\"#\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-paths-accent hover:underline\">Instagram di PaThS</a>.",
+    answer: "Puoi iscriverti tramite il form ufficiale cliccando sul pulsante <strong>'Iscriviti Ora'</strong> in cima alla pagina. Per qualsiasi domanda o chiarimento, puoi contattarci via email all'indirizzo <a href=\"mailto:paths@ai-sf.it\" class=\"text-terracotta font-bold hover:underline\">paths@ai-sf.it</a> oppure scriverci in direct sulla pagina <a href=\"https://www.instagram.com/paths.padova\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-terracotta font-bold hover:underline\">Instagram di PaThS</a>.",
   },
 ];

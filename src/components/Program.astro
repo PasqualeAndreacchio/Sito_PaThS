@@ -25,42 +25,46 @@ const dayHeaderStyles = [
         Cinque Giorni di <span class="text-terracotta">Scienza e Confronto</span>
       </h2>
       <p class="font-mono text-xs sm:text-sm text-ink-muted uppercase tracking-wider">
-        15–19 Marzo 2027 · Dipartimento di Fisica e Astronomia · Palazzo Bo
+        15–19 Marzo 2027 · Palazzo del Monte di Pietà · DFA Rostagni · Palazzo Bo · La Specola
       </p>
     </div>
 
-    <!-- Scientific program types (Editorial Cards) -->
+    <!-- Scientific program types (Editorial Cards based on actual proposal modules) -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
       <div class="editorial-card p-5">
         <div class="font-mono text-xs font-bold text-terracotta uppercase mb-2">MODULO 01</div>
-        <h4 class="font-bold text-ink text-base mb-1">Lectures Introduttive</h4>
-        <p class="text-ink-muted text-xs leading-relaxed">
-          Lezioni di docenti UniPd, INAF e INFN per la descrizione analitica e concettuale dei fenomeni trattati.
+        <h4 class="font-bold text-ink text-base mb-1">Modulo CFT (3 Lezioni)</h4>
+        <p class="text-ink-muted text-xs leading-relaxed mb-2">
+          Tenuto dal <strong>prof. Roberto Volpato</strong> (UniPD - INFN): fondamenti, simmetria conforme e strumenti analitici.
         </p>
+        <span class="text-[10px] font-mono text-terracotta block">Martedì &amp; Mercoledì</span>
       </div>
 
       <div class="editorial-card p-5">
         <div class="font-mono text-xs font-bold text-crimson uppercase mb-2">MODULO 02</div>
-        <h4 class="font-bold text-ink text-base mb-1">Research Talks</h4>
-        <p class="text-ink-muted text-xs leading-relaxed">
-          Seminari specialistici di frontiera tenuti da Professori ordinari, Ricercatori Postdoc e PhD candidate.
+        <h4 class="font-bold text-ink text-base mb-1">Modulo AdS (3 Lezioni)</h4>
+        <p class="text-ink-muted text-xs leading-relaxed mb-2">
+          Tenuto dal <strong>prof. Stefano Massai</strong> (UniPD): geometria anti-de Sitter, olografia e corrispondenza AdS/CFT.
         </p>
+        <span class="text-[10px] font-mono text-crimson block">Martedì &amp; Mercoledì</span>
       </div>
 
       <div class="editorial-card p-5">
         <div class="font-mono text-xs font-bold text-terracotta uppercase mb-2">MODULO 03</div>
-        <h4 class="font-bold text-ink text-base mb-1">Workshop Numerici</h4>
-        <p class="text-ink-muted text-xs leading-relaxed">
-          Sessioni applicate su calcolo analitico avanzato e simulazioni computazionali nella teoria contemporanea.
+        <h4 class="font-bold text-ink text-base mb-1">Lectio &amp; Research Talks</h4>
+        <p class="text-ink-muted text-xs leading-relaxed mb-2">
+          Lectio Magistralis del <strong>prof. Gianguido Dall'Agata</strong> (UniPD - INFN), contributo <strong>INAF</strong> e research talks <strong>INFN</strong>.
         </p>
+        <span class="text-[10px] font-mono text-terracotta block">Giovedì &amp; Venerdì</span>
       </div>
 
       <div class="editorial-card p-5">
         <div class="font-mono text-xs font-bold text-ink uppercase mb-2">MODULO 04</div>
-        <h4 class="font-bold text-ink text-base mb-1">Parallel Sessions &amp; Posters</h4>
-        <p class="text-ink-muted text-xs leading-relaxed">
-          Poster session di ricerca, presentazioni degli studenti partecipanti e Lectio Magistralis conclusiva.
+        <h4 class="font-bold text-ink text-base mb-1">Workshop &amp; Parallel</h4>
+        <p class="text-ink-muted text-xs leading-relaxed mb-2">
+          Workshop computazionale alla Specola, Poster Session PhD e sessioni parallele autogestite dai partecipanti.
         </p>
+        <span class="text-[10px] font-mono text-ink block">Martedì &amp; Giovedì</span>
       </div>
     </div>
 
@@ -85,13 +89,13 @@ const dayHeaderStyles = [
                 0{day.dayNumber}
               </div>
               <div>
-                <div class="font-mono text-xs uppercase tracking-widest text-white/80">{day.dayName} · 1{idx + 5} MARZO</div>
+                <div class="font-mono text-xs uppercase tracking-widest text-white/80">{day.dayName} · 1{idx + 5} MARZO 2027</div>
                 <div class="font-display text-2xl tracking-wide">{day.title}</div>
               </div>
             </div>
 
             <div class="flex items-center gap-3">
-              <span class="font-mono text-xs hidden sm:inline text-white/70">Dettagli orari</span>
+              <span class="font-mono text-xs hidden sm:inline text-white/70">Orari e Sedi</span>
               <svg
                 class={`day-chevron w-5 h-5 text-white transition-transform duration-200 ${idx === 0 ? "open" : ""}`}
                 fill="none"
@@ -108,22 +112,31 @@ const dayHeaderStyles = [
           <div class={`day-content ${idx === 0 ? "" : "hidden"}`} id={day.id}>
             <div class="p-6 bg-paper divide-y divide-ink/15 font-mono">
               {day.schedule.map((item) => (
-                <div class="schedule-row flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-3">
+                <div class="schedule-row flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-3.5">
                   <!-- Time Slot -->
-                  <span class="text-xs font-bold text-terracotta w-32 flex-shrink-0">
+                  <span class="text-xs font-bold text-terracotta w-36 flex-shrink-0">
                     {item.time}
                   </span>
                   <!-- Activity & Description -->
                   <div class="flex-1">
-                    <p class="text-sm font-bold text-ink font-sans">{item.title}</p>
+                    <div class="flex items-center gap-2 flex-wrap mb-0.5">
+                      <p class="text-sm font-bold text-ink font-sans">{item.title}</p>
+                      {item.tag && (
+                        <span class="text-[10px] font-mono px-2 py-0.5 bg-paper-warm border border-ink/20 text-ink font-semibold">
+                          {item.tag}
+                        </span>
+                      )}
+                    </div>
                     {item.speaker && (
-                      <p class="text-xs text-crimson font-mono mt-0.5 font-semibold">
-                        Relatore: {item.speaker}
+                      <p class="text-xs text-crimson font-mono mt-1 font-semibold flex items-center gap-1.5">
+                        <span class="text-crimson">▸ Docente:</span>
+                        <span>{item.speaker}</span>
                       </p>
                     )}
                     {item.location && (
-                      <p class="text-[11px] text-ink-muted font-mono mt-0.5">
-                        Luogo: {item.location}
+                      <p class="text-[11px] text-ink-muted font-mono mt-0.5 flex items-center gap-1.5">
+                        <span class="text-ink">📍 Sede:</span>
+                        <span>{item.location}</span>
                       </p>
                     )}
                   </div>
