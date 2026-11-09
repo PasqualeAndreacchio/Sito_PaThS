@@ -11,5 +11,10 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
+  vite: {
+    server: {
+      allowedHosts: true,
+    },
+  },
 });
 

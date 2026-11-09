@@ -58,7 +58,9 @@ export const eventInfo = {
   organizer: "AISF – Associazione Italiana Studenti di Fisica",
   localCommittee: "Comitato Locale di Padova",
   email: "paths.padova@ai-sf.it",
-  instagram: "https://instagram.com/aisf_padova",
+  instagramAisf: "https://www.instagram.com/aisf_padova?exln=MTN1MzRpYmg3ejVhZg==",
+  // Sostituisci "#" con il link del profilo Instagram di PaThS quando sarà creato:
+  instagramPaths: "#",
   websiteAISF: "https://ai-sf.it",
   participantsCount: "48",
   participantsDetail: "40 nazionali + 8 posti riservati UniPd",
@@ -267,6 +269,6 @@ export const faqList: FaqItem[] = [
   },
   {
     question: "Come faccio a iscrivermi?",
-    answer: "Puoi iscriverti compilando il form sottostante o cliccando su <strong>'Iscriviti'</strong> nella barra di navigazione. Per qualsiasi domanda o chiarimento, puoi contattarci via email all'indirizzo <a href=\"mailto:paths.padova@ai-sf.it\" class=\"text-paths-accent hover:underline\">paths.padova@ai-sf.it</a> oppure scriverci in direct sulla pagina <a href=\"https://instagram.com/aisf_padova\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-paths-accent hover:underline\">Instagram di AISF Padova</a>.",
+    answer: "Puoi iscriverti tramite il form ufficiale cliccando sul pulsante <strong>'Iscriviti Ora'</strong> in cima alla pagina. Per qualsiasi domanda o chiarimento, puoi contattarci via email all'indirizzo <a href=\"mailto:paths.padova@ai-sf.it\" class=\"text-paths-accent hover:underline\">paths.padova@ai-sf.it</a> oppure scriverci in direct sulla pagina <a href=\"#\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-paths-accent hover:underline\">Instagram di PaThS</a>.",
   },
 ];

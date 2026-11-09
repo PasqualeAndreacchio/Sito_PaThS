@@ -1,0 +1,43 @@
+---
+import { eventInfo } from '../data/siteData';
+---
+
+<!-- ===================== CTA BANNER ===================== -->
+<section id="register" class="py-20 bg-gradient-to-br from-paths-blue via-blue-800 to-indigo-900 text-center">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div
+      class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-widest uppercase backdrop-blur-sm"
+    >
+      <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+      Iscrizioni aperte
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">Pronto a esplorare la fisica teorica?</h2>
+    <p class="text-blue-200 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+      Non perdere la prima edizione della Padova Theoretical School. I posti sono limitati: l'evento si terrà a Padova
+      dal <strong class="text-white">{eventInfo.dates}</strong>.
+    </p>
+    <a
+      href={eventInfo.googleFormUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 bg-white text-paths-blue font-bold text-base px-10 py-4 rounded-xl hover:bg-blue-50 transition-all duration-200 shadow-xl hover:-translate-y-0.5 cursor-pointer"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-5 h-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2.5"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l3 3m0 0l-3 3m3-3H9"
+        ></path>
+      </svg>
+      Iscriviti Ora
+    </a>
+  </div>
+</section>
+
