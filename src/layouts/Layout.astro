@@ -10,7 +10,7 @@ interface Props {
 const {
   title = "PaThS 2027 – Padova Theoretical School",
   description = "Prima edizione della Padova Theoretical School (PaThS), organizzata dall'AISF Comitato Locale di Padova. 15-19 Marzo 2027, Università di Padova.",
-  image = "/images/padova.jpg",
+  image = "/images/poster.jpg",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://paths.ai-sf.it");
@@ -39,18 +39,55 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://paths.ai
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Bebas Neue, Architects Daughter, Plus Jakarta Sans, Space Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="font-sans bg-paths-bg text-gray-800 antialiased selection:bg-paths-accent selection:text-white">
-    <slot />
+  <body class="bg-paper text-ink antialiased selection:bg-terracotta selection:text-paper relative min-h-screen">
+    
+    <!-- ============================================================
+         WATERCOLOR ATMOSPHERE LAYERS (DIRECTLY MATCHING THE POSTER)
+         Top-Left: Smoky Blue-Grey watercolor cloud (#5B677D)
+         Bottom-Right: Coral/Crimson watercolor bloom (#F43F5E / #E11D48)
+         ============================================================ -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+      <!-- Top-Left Smoky Blue-Grey Watercolor Cloud -->
+      <div
+        class="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full opacity-25 filter blur-3xl mix-blend-multiply"
+        style="background: radial-gradient(circle at 35% 35%, #5B677D 0%, #3B4A60 50%, transparent 75%);"
+      ></div>
+      <div
+        class="absolute top-0 left-0 w-[360px] h-[360px] rounded-full opacity-20 filter blur-2xl mix-blend-multiply"
+        style="background: radial-gradient(circle at 20% 20%, #7E8C9F 0%, #5B677D 60%, transparent 80%);"
+      ></div>
 
-    <!-- Vanilla Client Scripts (Smooth scroll, Navbar shadow, Fade-in, Back to top) -->
+      <!-- Bottom-Right Coral/Crimson Watercolor Wash Bloom -->
+      <div
+        class="absolute -bottom-36 -right-36 w-[600px] h-[600px] rounded-full opacity-25 filter blur-3xl mix-blend-multiply"
+        style="background: radial-gradient(circle at 65% 65%, #F43F5E 0%, #E11D48 45%, #990012 70%, transparent 85%);"
+      ></div>
+      <div
+        class="absolute bottom-10 right-10 w-[380px] h-[380px] rounded-full opacity-20 filter blur-2xl mix-blend-multiply"
+        style="background: radial-gradient(circle at 70% 70%, #FB7185 0%, #E11D48 55%, transparent 75%);"
+      ></div>
+
+      <!-- Subtle paper noise texture / grain -->
+      <div
+        class="absolute inset-0 opacity-[0.025]"
+        style="background-image: radial-gradient(#16243E 1px, transparent 1px); background-size: 24px 24px;"
+      ></div>
+    </div>
+
+    <!-- Main site content above background washes -->
+    <div class="relative z-10 flex flex-col min-h-screen">
+      <slot />
+    </div>
+
+    <!-- Vanilla Client Scripts (Smooth scroll, Navbar, Section observer) -->
     <script>
       // Smooth scroll
       document.querySelectorAll('a.scroll-link').forEach((link) => {
@@ -90,7 +127,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://paths.ai
               }
             });
           },
-          { threshold: 0.08 }
+          { threshold: 0.06 }
         );
 
         document.querySelectorAll('section').forEach((el) => {
@@ -101,4 +138,3 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://paths.ai
     </script>
   </body>
 </html>
-

@@ -1,105 +1,130 @@
 ---
 import { programDays } from '../data/siteData';
+import PathIntegralSeparator from './PathIntegralSeparator.astro';
 
-// Background colors for the headers of the 5 days to match original theme
-const dayBgColors = [
-  'bg-paths-blue',
-  'bg-blue-800',
-  'bg-blue-700',
-  'bg-indigo-700',
-  'bg-indigo-900',
+// Day header color sequence matching poster palette (Ink, Terracotta, Crimson, Smoke)
+const dayHeaderStyles = [
+  'bg-ink text-paper border-ink',
+  'bg-terracotta text-paper border-ink',
+  'bg-crimson text-paper border-ink',
+  'bg-smoke-dark text-paper border-ink',
+  'bg-ink text-paper border-ink',
 ];
 ---
 
-<section id="program" class="py-24 bg-paths-bg">
+<section id="program" class="py-20 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Section header -->
-    <div class="text-center mb-16">
-      <span class="inline-block text-paths-accent font-mono text-xs font-semibold tracking-widest uppercase mb-3">
-        Programma
-      </span>
-      <h2 class="text-3xl sm:text-4xl font-bold text-paths-blue mb-4">
-        Cinque giorni di fisica teorica
+    <div class="max-w-3xl mb-14">
+      <div class="inline-flex items-center gap-2 font-mono text-xs font-bold text-terracotta uppercase tracking-widest mb-3">
+        <span class="w-1.5 h-1.5 bg-terracotta"></span>
+        SEZIONE 02 · CRONOPROGRAMMA
+      </div>
+      <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-ink uppercase tracking-tight mb-4">
+        Cinque Giorni di <span class="text-terracotta">Scienza e Confronto</span>
       </h2>
-      <div class="w-16 h-1 bg-paths-accent mx-auto rounded-full mb-6"></div>
-      <p class="text-gray-500 max-w-2xl mx-auto text-base">
-        Un programma scientifico ricco alternato ad attività sociali e culturali nella città di Padova.
+      <p class="font-mono text-xs sm:text-sm text-ink-muted uppercase tracking-wider">
+        15–19 Marzo 2027 · Dipartimento di Fisica e Astronomia · Palazzo Bo
       </p>
     </div>
 
-    <!-- Scientific program types -->
+    <!-- Scientific program types (Editorial Cards) -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-      <div class="bg-white rounded-xl p-5 border border-gray-200 shadow-sm">
-        <div class="text-paths-accent font-mono text-2xl mb-3">📚</div>
-        <h4 class="font-semibold text-paths-blue mb-1 text-sm">Lectures Introduttive</h4>
-        <p class="text-gray-500 text-xs leading-relaxed">
-          Lezioni di docenti e ricercatori UniPd, INAF, INFN per la descrizione matematica e concettuale dei fenomeni trattati.
+      <div class="editorial-card p-5">
+        <div class="font-mono text-xs font-bold text-terracotta uppercase mb-2">MODULO 01</div>
+        <h4 class="font-bold text-ink text-base mb-1">Lectures Introduttive</h4>
+        <p class="text-ink-muted text-xs leading-relaxed">
+          Lezioni di docenti UniPd, INAF e INFN per la descrizione analitica e concettuale dei fenomeni trattati.
         </p>
       </div>
-      <div class="bg-white rounded-xl p-5 border border-gray-200 shadow-sm">
-        <div class="text-paths-accent font-mono text-2xl mb-3">🔬</div>
-        <h4 class="font-semibold text-paths-blue mb-1 text-sm">Research Talks</h4>
-        <p class="text-gray-500 text-xs leading-relaxed">
-          Seminari di ricerca all'avanguardia tenuti da Professori, Ricercatori Postdoc e studenti di Dottorato.
+
+      <div class="editorial-card p-5">
+        <div class="font-mono text-xs font-bold text-crimson uppercase mb-2">MODULO 02</div>
+        <h4 class="font-bold text-ink text-base mb-1">Research Talks</h4>
+        <p class="text-ink-muted text-xs leading-relaxed">
+          Seminari specialistici di frontiera tenuti da Professori ordinari, Ricercatori Postdoc e PhD candidate.
         </p>
       </div>
-      <div class="bg-white rounded-xl p-5 border border-gray-200 shadow-sm">
-        <div class="text-paths-accent font-mono text-2xl mb-3">💻</div>
-        <h4 class="font-semibold text-paths-blue mb-1 text-sm">Workshop Computazionali</h4>
-        <p class="text-gray-500 text-xs leading-relaxed">
-          Sessioni pratiche su calcolo teorico avanzato e simulazioni numeriche nella fisica teorica moderna.
+
+      <div class="editorial-card p-5">
+        <div class="font-mono text-xs font-bold text-terracotta uppercase mb-2">MODULO 03</div>
+        <h4 class="font-bold text-ink text-base mb-1">Workshop Numerici</h4>
+        <p class="text-ink-muted text-xs leading-relaxed">
+          Sessioni applicate su calcolo analitico avanzato e simulazioni computazionali nella teoria contemporanea.
         </p>
       </div>
-      <div class="bg-white rounded-xl p-5 border border-gray-200 shadow-sm">
-        <div class="text-paths-accent font-mono text-2xl mb-3">🗣️</div>
-        <h4 class="font-semibold text-paths-blue mb-1 text-sm">Parallel Sessions</h4>
-        <p class="text-gray-500 text-xs leading-relaxed">
-          Poster session PhD, sessioni parallele proposte dagli stessi partecipanti e Lectio Magistralis.
+
+      <div class="editorial-card p-5">
+        <div class="font-mono text-xs font-bold text-ink uppercase mb-2">MODULO 04</div>
+        <h4 class="font-bold text-ink text-base mb-1">Parallel Sessions &amp; Posters</h4>
+        <p class="text-ink-muted text-xs leading-relaxed">
+          Poster session di ricerca, presentazioni degli studenti partecipanti e Lectio Magistralis conclusiva.
         </p>
       </div>
     </div>
 
-    <!-- Day-by-day timeline -->
-    <div class="space-y-6">
+    <!-- Separator -->
+    <PathIntegralSeparator variant="wave" className="my-6" />
+
+    <!-- Day-by-day timeline accordion with editorial design -->
+    <div class="space-y-4">
       {programDays.map((day, idx) => (
-        <div class="day-card bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+        <div class="border-[1.5px] border-ink bg-white shadow-[4px_4px_0px_#16243E] overflow-hidden">
+          <!-- Accordion Header -->
           <div
-            class={`day-header flex items-center gap-4 p-5 ${dayBgColors[idx % dayBgColors.length]} cursor-pointer select-none`}
+            class={`day-header flex items-center justify-between gap-4 p-5 ${dayHeaderStyles[idx % dayHeaderStyles.length]} cursor-pointer select-none border-b-[1.5px]`}
             data-day={day.id}
             role="button"
             tabindex="0"
             aria-expanded={idx === 0 ? "true" : "false"}
           >
-            <div class="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
-              <span class="text-white font-bold font-mono text-sm">{day.dayNumber}</span>
+            <div class="flex items-center gap-4">
+              <!-- Day Number stamp -->
+              <div class="w-10 h-10 border border-white/40 bg-white/10 flex items-center justify-center font-mono font-bold text-sm">
+                0{day.dayNumber}
+              </div>
+              <div>
+                <div class="font-mono text-xs uppercase tracking-widest text-white/80">{day.dayName} · 1{idx + 5} MARZO</div>
+                <div class="font-display text-2xl tracking-wide">{day.title}</div>
+              </div>
             </div>
-            <div class="flex-1">
-              <div class="text-blue-200 text-xs font-mono uppercase tracking-widest">{day.dayName}</div>
-              <div class="text-white font-bold text-base">{day.title}</div>
+
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-xs hidden sm:inline text-white/70">Dettagli orari</span>
+              <svg
+                class={`day-chevron w-5 h-5 text-white transition-transform duration-200 ${idx === 0 ? "open" : ""}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
             </div>
-            <svg
-              class={`day-chevron w-5 h-5 text-white/60 transition-transform duration-200 ${idx === 0 ? "open" : ""}`}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
           </div>
 
+          <!-- Accordion Content -->
           <div class={`day-content ${idx === 0 ? "" : "hidden"}`} id={day.id}>
-            <div class="p-5 space-y-2">
-              {day.schedule.map((item, rowIdx) => (
-                <div class={`schedule-row flex gap-3 items-start py-2.5 ${rowIdx < day.schedule.length - 1 ? 'border-b border-gray-100' : ''}`}>
-                  <span class="time-badge font-mono text-xs text-paths-accent font-semibold w-28 flex-shrink-0 pt-0.5">
+            <div class="p-6 bg-paper divide-y divide-ink/15 font-mono">
+              {day.schedule.map((item) => (
+                <div class="schedule-row flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 py-3">
+                  <!-- Time Slot -->
+                  <span class="text-xs font-bold text-terracotta w-32 flex-shrink-0">
                     {item.time}
                   </span>
-                  <div>
-                    <p class="text-sm font-medium text-gray-800">{item.title}</p>
-                    {item.speakerOrPlace && (
-                      <p class="text-xs text-gray-500 mt-0.5">{item.speakerOrPlace}</p>
+                  <!-- Activity & Description -->
+                  <div class="flex-1">
+                    <p class="text-sm font-bold text-ink font-sans">{item.title}</p>
+                    {item.speaker && (
+                      <p class="text-xs text-crimson font-mono mt-0.5 font-semibold">
+                        Relatore: {item.speaker}
+                      </p>
+                    )}
+                    {item.location && (
+                      <p class="text-[11px] text-ink-muted font-mono mt-0.5">
+                        Luogo: {item.location}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -110,52 +135,35 @@ const dayBgColors = [
       ))}
     </div>
 
-    <!-- Pre-school note -->
-    <div class="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6 flex gap-4 items-start">
-      <div class="w-8 h-8 rounded-lg bg-paths-accent flex items-center justify-center flex-shrink-0 mt-0.5">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      </div>
-      <div>
-        <p class="text-sm font-semibold text-paths-blue mb-1">Preparazione Pre-Scuola</p>
-        <p class="text-sm text-gray-600">
-          Prima dell'inizio delle attività verranno pubblicati sul sito i temi trattati, i suggerimenti bibliografici e materiale di approfondimento per preparare al meglio i partecipanti.
-        </p>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <script>
   document.querySelectorAll('.day-header').forEach((header) => {
-    const dayId = header.getAttribute('data-day');
-    const content = dayId ? document.getElementById(dayId) : null;
-    const chevron = header.querySelector('.day-chevron');
-
-    if (!content) return;
-
     header.addEventListener('click', () => {
-      const isHidden = content.classList.contains('hidden');
-      if (isHidden) {
-        content.classList.remove('hidden');
-        chevron?.classList.add('open');
-        header.setAttribute('aria-expanded', 'true');
-      } else {
-        content.classList.add('hidden');
+      const dayId = header.getAttribute('data-day');
+      if (!dayId) return;
+
+      const content = document.getElementById(dayId);
+      const chevron = header.querySelector('.day-chevron');
+      const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+      if (isExpanded) {
+        content?.classList.add('hidden');
         chevron?.classList.remove('open');
         header.setAttribute('aria-expanded', 'false');
+      } else {
+        content?.classList.remove('hidden');
+        chevron?.classList.add('open');
+        header.setAttribute('aria-expanded', 'true');
       }
     });
 
-    header.addEventListener('keydown', (e: Event) => {
-      const keyEvent = e as KeyboardEvent;
-      if (keyEvent.key === 'Enter' || keyEvent.key === ' ') {
-        keyEvent.preventDefault();
+    header.addEventListener('keydown', (e: any) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
         (header as HTMLElement).click();
       }
     });
   });
 </script>
-

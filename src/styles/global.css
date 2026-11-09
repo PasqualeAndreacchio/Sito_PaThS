@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 /* =========================================================
-   PaThS 2027 – Global styles
+   PaThS 2027 – Official Design System
+   Inspired by the Official Event Poster
    ========================================================= */
 
 *, *::before, *::after {
@@ -12,35 +13,38 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 72px; /* navbar height offset */
+  scroll-padding-top: 80px; /* navbar height offset */
+  background-color: #FAF9F6;
+  color: #16243E;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
+  background-color: #FAF9F6;
+  color: #16243E;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
-/* ---- Navbar scroll shadow ---- */
+/* ---- Selection color ---- */
+::selection {
+  background-color: #9A3324;
+  color: #FAF9F6;
+}
+
+/* ---- Navbar scroll effect ---- */
 #navbar.scrolled {
-  box-shadow: 0 4px 24px rgba(26, 58, 92, 0.10);
-}
-
-/* ---- Hero text shadow ---- */
-.hero-title {
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.5);
-}
-.hero-subtitle {
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-}
-#hero p {
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  background-color: rgba(250, 249, 246, 0.96);
+  border-bottom: 1.5px solid #16243E;
+  box-shadow: 0 4px 12px rgba(22, 36, 62, 0.05);
 }
 
 /* ---- Day accordion ---- */
 .day-header {
-  transition: opacity 0.15s ease;
+  transition: all 0.2s ease;
 }
 .day-header:hover {
-  opacity: 0.93;
+  background-color: #101B2E;
 }
 
 .day-chevron.open {
@@ -58,7 +62,7 @@ body {
 
 /* ---- FAQ accordion ---- */
 .faq-btn:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #9A3324;
   outline-offset: -2px;
 }
 
@@ -69,14 +73,78 @@ body {
   transform: rotate(45deg);
 }
 
-/* ---- Cards hover ---- */
-.topic-card,
-.logistics-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+/* ---- Editorial Cards: Ink borders, sharp corners, zero fuzzy AI shadow ---- */
+.editorial-card {
+  border: 1.5px solid #16243E;
+  background-color: #FAF9F6;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 3px 3px 0px #16243E;
 }
-.topic-card:hover,
-.logistics-card:hover {
-  transform: translateY(-2px);
+
+.editorial-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #16243E;
+}
+
+.editorial-card-subtle {
+  border: 1.5px solid rgba(22, 36, 62, 0.25);
+  background-color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.editorial-card-subtle:hover {
+  border-color: #16243E;
+  box-shadow: 3px 3px 0px #16243E;
+}
+
+/* ---- Editorial Buttons ---- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #9A3324;
+  color: #FAF9F6;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.875rem 1.75rem;
+  border: 1.5px solid #16243E;
+  box-shadow: 3px 3px 0px #16243E;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  background-color: #7A2417;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #16243E;
+}
+
+.btn-primary:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #16243E;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FAF9F6;
+  color: #16243E;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.875rem 1.75rem;
+  border: 1.5px solid #16243E;
+  box-shadow: 3px 3px 0px #16243E;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary:hover {
+  background-color: #F4F2EC;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #16243E;
 }
 
 /* ---- Back to top ---- */
@@ -85,19 +153,13 @@ body {
   pointer-events: auto;
 }
 
-/* ---- Responsive image fallback ---- */
-img {
-  max-width: 100%;
-}
-
 /* ---- Section transition helper ---- */
 .section-fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .section-fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
-

@@ -2,103 +2,90 @@
 import { eventInfo } from '../data/siteData';
 ---
 
-<footer id="contact" class="bg-gray-900 text-gray-300">
+<footer id="contact" class="bg-ink-deep text-paper border-t-[1.5px] border-ink">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid md:grid-cols-3 gap-10 mb-12">
 
       <!-- Brand column -->
       <div>
         <div class="flex items-center gap-3 mb-5">
-          <div class="w-10 h-10 rounded-lg bg-paths-accent flex items-center justify-center">
-            <span class="text-white font-bold font-mono text-sm">Ψ</span>
+          <div class="w-10 h-10 border-[1.5px] border-paper bg-terracotta flex items-center justify-center shadow-[2px_2px_0px_#FFFFFF]">
+            <span class="text-paper font-bold font-mono text-sm">Ψ</span>
           </div>
           <div>
-            <span class="font-black text-white text-lg tracking-tight">PaThS {eventInfo.edition}</span>
-            <p class="text-gray-500 text-xs">{eventInfo.subtitle}</p>
+            <span class="font-display text-3xl tracking-wide text-paper">PATHS 2027</span>
+            <p class="text-paper/60 text-xs font-mono uppercase tracking-widest">{eventInfo.subtitle}</p>
           </div>
         </div>
-        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-          Organizzata dall'{eventInfo.organizer} – {eventInfo.localCommittee}.<br />
+
+        <p class="text-paper/70 text-xs font-mono leading-relaxed mb-6">
+          Organizzata da {eventInfo.organizer} – {eventInfo.localCommittee}.<br />
           {eventInfo.location}.
         </p>
+
         <!-- Social buttons: Instagram AISF Padova & PaThS -->
         <div class="flex flex-col gap-2.5">
           <a
             href={eventInfo.instagramAisf}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-gray-800/90 hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 text-gray-200 hover:text-white border border-gray-700/60 hover:border-transparent text-xs font-medium transition-all duration-300 shadow-sm hover:shadow-pink-500/20 group"
+            class="inline-flex items-center gap-2.5 px-4 py-2 border border-paper/30 bg-white/5 hover:bg-terracotta hover:border-paper text-paper text-xs font-mono transition-colors"
           >
-            <svg class="w-4 h-4 text-pink-400 group-hover:text-white transition-colors duration-200 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
             </svg>
-            <span>Segui AISF Padova su Instagram</span>
+            <span>Instagram: @aisf_padova</span>
           </a>
           <a
             href={eventInfo.instagramPaths}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-gray-800/90 hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 text-gray-200 hover:text-white border border-gray-700/60 hover:border-transparent text-xs font-medium transition-all duration-300 shadow-sm hover:shadow-pink-500/20 group"
+            class="inline-flex items-center gap-2.5 px-4 py-2 border border-paper/30 bg-white/5 hover:bg-terracotta hover:border-paper text-paper text-xs font-mono transition-colors"
           >
-            <svg class="w-4 h-4 text-pink-400 group-hover:text-white transition-colors duration-200 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
             </svg>
-            <span>Segui PaThS su Instagram</span>
+            <span>Instagram: @paths.padova</span>
           </a>
         </div>
       </div>
 
       <!-- Quick links -->
       <div>
-        <h4 class="text-white font-semibold text-sm mb-5 uppercase tracking-widest">Navigazione</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#about" class="scroll-link text-gray-400 hover:text-white transition-colors">L'Evento</a></li>
-          <li><a href="#topics" class="scroll-link text-gray-400 hover:text-white transition-colors">Aree Tematiche</a></li>
-          <li><a href="#program" class="scroll-link text-gray-400 hover:text-white transition-colors">Programma</a></li>
-          <li><a href="#locations" class="scroll-link text-gray-400 hover:text-white transition-colors">Luoghi</a></li>
-          <li><a href="#logistics" class="scroll-link text-gray-400 hover:text-white transition-colors">Logistica e Quote</a></li>
-          <li><a href="#sponsors" class="scroll-link text-gray-400 hover:text-white transition-colors">Sponsor &amp; Partner</a></li>
-          <li><a href="#faq" class="scroll-link text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-          <li><a href="#register" class="scroll-link text-gray-400 hover:text-white transition-colors">Iscrizione</a></li>
+        <h4 class="text-paper font-mono font-bold text-xs mb-5 uppercase tracking-widest text-terracotta-light">Navigazione</h4>
+        <ul class="space-y-2 text-xs font-mono">
+          <li><a href="#about" class="scroll-link text-paper/70 hover:text-paper hover:underline">01. L'Iniziativa</a></li>
+          <li><a href="#topics" class="scroll-link text-paper/70 hover:text-paper hover:underline">02. Aree Tematiche</a></li>
+          <li><a href="#program" class="scroll-link text-paper/70 hover:text-paper hover:underline">03. Programma 5 Giorni</a></li>
+          <li><a href="#locations" class="scroll-link text-paper/70 hover:text-paper hover:underline">04. Luoghi a Padova</a></li>
+          <li><a href="#logistics" class="scroll-link text-paper/70 hover:text-paper hover:underline">05. Logistica e Quote</a></li>
+          <li><a href="#sponsors" class="scroll-link text-paper/70 hover:text-paper hover:underline">06. Sponsor &amp; Partner</a></li>
+          <li><a href="#faq" class="scroll-link text-paper/70 hover:text-paper hover:underline">07. FAQ</a></li>
+          <li><a href="#register" class="scroll-link text-paper/70 hover:text-paper hover:underline">08. Iscrizione Form</a></li>
         </ul>
       </div>
 
       <!-- Contacts -->
       <div>
-        <h4 class="text-white font-semibold text-sm mb-5 uppercase tracking-widest">Contatti</h4>
-        <p class="text-xs text-gray-400 mb-4 leading-relaxed">
-          Per qualsiasi dubbio, informazione sul programma o sull'iscrizione puoi scriverci via email o contattarci direttamente su Instagram:
+        <h4 class="text-paper font-mono font-bold text-xs mb-5 uppercase tracking-widest text-terracotta-light">Contatti Ufficiali</h4>
+        <p class="text-xs font-mono text-paper/70 mb-4 leading-relaxed">
+          Per informazioni didattiche, logistiche o domande sul bando di partecipazione:
         </p>
-        <ul class="space-y-3 text-sm">
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-paths-accent mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
+        <ul class="space-y-3 text-xs font-mono">
+          <li class="flex items-start gap-2.5">
+            <span class="text-terracotta font-bold">@</span>
             <div>
-              <p class="text-gray-500 text-xs mb-0.5">Email ufficiale</p>
-              <a href={`mailto:${eventInfo.email}`} class="text-gray-300 hover:text-white transition-colors">
+              <p class="text-paper/50 text-[10px]">Email Ufficiale PaThS</p>
+              <a href={`mailto:${eventInfo.email}`} class="text-paper hover:underline">
                 {eventInfo.email}
               </a>
             </div>
           </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-pink-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-            </svg>
+          <li class="flex items-start gap-2.5">
+            <span class="text-crimson font-bold">🏛</span>
             <div>
-              <p class="text-gray-500 text-xs mb-0.5">Instagram PaThS</p>
-              <a href={eventInfo.instagramPaths} target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">
-                Scrivici su Instagram →
-              </a>
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-paths-accent mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-            </svg>
-            <div>
-              <p class="text-gray-500 text-xs mb-0.5">AISF Nazionale</p>
-              <a href={eventInfo.websiteAISF} target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">
+              <p class="text-paper/50 text-[10px]">AISF Nazionale</p>
+              <a href="https://ai-sf.it" target="_blank" rel="noopener noreferrer" class="text-paper hover:underline">
                 ai-sf.it
               </a>
             </div>
@@ -108,17 +95,10 @@ import { eventInfo } from '../data/siteData';
 
     </div>
 
-    <!-- Bottom bar -->
-    <div class="pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-      <p>© {eventInfo.edition} PaThS – Padova Theoretical School · {eventInfo.dates} · {eventInfo.city}. Tutti i diritti riservati.</p>
-      <p>
-        Organizzato da
-        <a href={eventInfo.websiteAISF} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors ml-1">
-          AISF
-        </a>
-        – {eventInfo.localCommittee}
-      </p>
+    <!-- Bottom credits -->
+    <div class="pt-8 border-t border-paper/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-paper/50">
+      <p>© 2027 PaThS – Padova Theoretical School · AISF Comitato Locale di Padova</p>
+      <p>Organizzato da studenti per studenti · Università degli Studi di Padova</p>
     </div>
   </div>
 </footer>
-
