@@ -47,6 +47,7 @@ export interface LocationItem {
   image: string;
   alt: string;
   mapLink: string;
+  isLogo?: boolean;
 }
 
 // ---- Info Generali Evento ----
@@ -68,7 +69,7 @@ export const eventInfo = {
   schoolDays: "5",
   feeAccommodation: "120€",
   feeNoAccommodation: "70€",
-  
+
   googleFormUrl: "https://forms.gle/INSERISCI_QUI_IL_LINK",
   googleFormAction: "https://docs.google.com/forms/d/e/INSERISCI_FORM_ID_QUI/formResponse",
 };
@@ -379,9 +380,10 @@ export const locationsList: LocationItem[] = [
     title: "Palazzo del Monte di Pietà",
     description: "Sede centrale delle lezioni teoriche dei Moduli CFT e AdS, dei research talks INFN, della Poster Session PhD, della Lectio Magistralis INAF e delle sessioni parallele.",
     address: "Piazza Duomo, 14 – Padova",
-    image: "/images/palazzo_bo.jpg",
+    image: "/images/palazzo_monte_pieta.jpg",
     alt: "Palazzo del Monte di Pietà – Sede didattica PaThS",
     mapLink: "https://maps.google.com/?q=Palazzo+del+Monte+di+Pieta+Piazza+Duomo+Padova",
+    isLogo: false,
   },
   {
     id: "dfa",
@@ -389,9 +391,10 @@ export const locationsList: LocationItem[] = [
     title: 'DFA "G. Galilei" – Aula Rostagni',
     description: "L'Aula Rostagni e il Chiostro/Giardino del Dipartimento di Fisica e Astronomia ospiteranno la Cerimonia di Apertura ufficiale, il talk introduttivo e il welcome coffee break.",
     address: "Via Francesco Marzolo, 8 – Padova",
-    image: "/images/dfa.jpg",
+    image: "/images/logo_dfa.svg",
     alt: "Dipartimento di Fisica e Astronomia G. Galilei – Aula Rostagni",
     mapLink: "https://maps.google.com/?q=Dipartimento+di+Fisica+e+Astronomia+Galileo+Galilei+Padova",
+    isLogo: true,
   },
   {
     id: "palazzo-bo",
@@ -399,9 +402,10 @@ export const locationsList: LocationItem[] = [
     title: "Palazzo Bo – Aula Nievo",
     description: "La prestigiosa sede storica centrale dell'Ateneo patavino accoglierà la Lectio Magistralis conclusiva del prof. Dall'Agata e i saluti istituzionali finali.",
     address: "Via VIII Febbraio, 2 – Padova",
-    image: "/images/unipd.jpg",
+    image: "/images/palazzo_bo.jpg",
     alt: "Palazzo Bo – Università degli Studi di Padova",
     mapLink: "https://maps.google.com/?q=Palazzo+Bo+Padova",
+    isLogo: false,
   },
   {
     id: "specola",
@@ -409,29 +413,32 @@ export const locationsList: LocationItem[] = [
     title: "INAF – Osservatorio La Specola",
     description: "La storica torre e osservatorio astronomico della Specola accoglierà la sessione laboratoriale e di calcolo computazionale d'avanguardia.",
     address: "Vicolo dell'Osservatorio, 5 – Padova",
-    image: "/images/galileiana.jpg",
+    image: "/images/specola.jpg",
     alt: "INAF Osservatorio Astronomico La Specola Padova",
     mapLink: "https://maps.google.com/?q=Osservatorio+Astronomico+La+Specola+Padova",
+    isLogo: false,
   },
   {
     id: "hotello",
     badge: "Alloggio Convenzionato",
     title: "Hotello Padova",
     description: "Struttura moderna e centralissima riservata ai 40 partecipanti della quota con alloggio, situata a soli 10 minuti a piedi dalla stazione FS e da tutte le aule.",
-    address: "Via Magarotto, 2 – Padova",
+    address: "Corso del Popolo, 2 – Padova",
     image: "/images/hotello.jpg",
     alt: "Hotello Padova – Alloggio partecipanti",
     mapLink: "https://maps.google.com/?q=Hotello+Padova",
+    isLogo: true,
   },
   {
     id: "birrone",
     badge: "Eventi Sociali & Gala",
     title: "Birrone Padova",
     description: "Punto di riferimento conviviale padovano: ospiterà l'aperitivo di benvenuto Physics & Drinks del lunedì e la Cena Sociale conclusiva del giovedì.",
-    address: "Via Belzoni, 18 – Padova",
-    image: "/images/padova.jpg",
+    address: "Via Trieste, 5c – Padova",
+    image: "/images/birrone.png",
     alt: "Birrone Padova – Eventi sociali PaThS",
     mapLink: "https://maps.google.com/?q=Birrone+Padova+Via+Belzoni",
+    isLogo: true,
   },
 ];
 
