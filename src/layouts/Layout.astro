@@ -47,38 +47,42 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://paths.ai
       rel="stylesheet"
     />
   </head>
-  <body class="bg-paper text-ink antialiased selection:bg-terracotta selection:text-paper relative min-h-screen">
+  <body class="bg-paper text-ink antialiased selection:bg-crimson selection:text-white relative min-h-screen">
     
     <!-- ============================================================
-         WATERCOLOR ATMOSPHERE LAYERS (DIRECTLY MATCHING THE POSTER)
-         Top-Left: Smoky Blue-Grey watercolor cloud (#5B677D)
-         Bottom-Right: Coral/Crimson watercolor bloom (#F43F5E / #E11D48)
+         WATERCOLOR ATMOSPHERE LAYERS (OFFICIAL EVENT PALETTE)
+         Top Header Wash: Warm Terracotta/Coral Wash (#D44E42 / #8C222C / #B87266)
+         Bottom Accent: Warm Bo Red & Sand Bloom (#8C222C / #DCB393)
          ============================================================ -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-      <!-- Top-Left Smoky Blue-Grey Watercolor Cloud -->
+      <!-- Top Warm Coral & Rosso Bo Watercolor Header Wash -->
       <div
-        class="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full opacity-25 filter blur-3xl mix-blend-multiply"
-        style="background: radial-gradient(circle at 35% 35%, #5B677D 0%, #3B4A60 50%, transparent 75%);"
+        class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[520px] rounded-full opacity-30 filter blur-3xl mix-blend-multiply"
+        style="background: radial-gradient(ellipse at 50% 20%, #D44E42 0%, #8C222C 45%, #B87266 70%, transparent 85%);"
       ></div>
       <div
-        class="absolute top-0 left-0 w-[360px] h-[360px] rounded-full opacity-20 filter blur-2xl mix-blend-multiply"
-        style="background: radial-gradient(circle at 20% 20%, #7E8C9F 0%, #5B677D 60%, transparent 80%);"
+        class="absolute -top-24 -left-20 w-[480px] h-[480px] rounded-full opacity-25 filter blur-2xl mix-blend-multiply"
+        style="background: radial-gradient(circle at 30% 30%, #D44E42 0%, #8C222C 55%, transparent 80%);"
+      ></div>
+      <div
+        class="absolute -top-24 -right-20 w-[480px] h-[480px] rounded-full opacity-25 filter blur-2xl mix-blend-multiply"
+        style="background: radial-gradient(circle at 70% 30%, #B87266 0%, #D44E42 50%, transparent 80%);"
       ></div>
 
-      <!-- Bottom-Right Coral/Crimson Watercolor Wash Bloom -->
+      <!-- Bottom-Right Warm Bo Red & Rose Bloom -->
       <div
         class="absolute -bottom-36 -right-36 w-[600px] h-[600px] rounded-full opacity-25 filter blur-3xl mix-blend-multiply"
-        style="background: radial-gradient(circle at 65% 65%, #F43F5E 0%, #E11D48 45%, #990012 70%, transparent 85%);"
+        style="background: radial-gradient(circle at 65% 65%, #D44E42 0%, #8C222C 50%, transparent 85%);"
       ></div>
       <div
         class="absolute bottom-10 right-10 w-[380px] h-[380px] rounded-full opacity-20 filter blur-2xl mix-blend-multiply"
-        style="background: radial-gradient(circle at 70% 70%, #FB7185 0%, #E11D48 55%, transparent 75%);"
+        style="background: radial-gradient(circle at 70% 70%, #B87266 0%, #8C222C 55%, transparent 75%);"
       ></div>
 
       <!-- Subtle paper noise texture / grain -->
       <div
-        class="absolute inset-0 opacity-[0.025]"
-        style="background-image: radial-gradient(#16243E 1px, transparent 1px); background-size: 24px 24px;"
+        class="absolute inset-0 opacity-[0.03]"
+        style="background-image: radial-gradient(#1B140E 1px, transparent 1px); background-size: 24px 24px;"
       ></div>
     </div>
 

@@ -26,7 +26,7 @@ import { eventInfo } from '../data/siteData';
       
       <!-- Text (7 cols) -->
       <div class="lg:col-span-7 space-y-5 text-ink leading-relaxed">
-        <div class="p-6 border-[1.5px] border-ink bg-white shadow-[3px_3px_0px_#16243E]">
+        <div class="p-6 border-[1.5px] border-ink bg-white shadow-[3px_3px_0px_#1B140E]">
           <p class="text-base sm:text-lg text-ink font-normal leading-relaxed">
             L'Associazione Italiana Studenti di Fisica (<strong class="text-terracotta">AISF</strong>) organizza la prima
             edizione della <strong class="text-ink font-bold">Padova Theoretical School (PaThS)</strong>, un evento residenziale dal
@@ -51,11 +51,11 @@ import { eventInfo } from '../data/siteData';
 
       <!-- Theoretical Chalkboard Illustration (5 cols, editorial frame) -->
       <div class="lg:col-span-5">
-        <div class="border-[1.5px] border-ink bg-white p-3 shadow-[5px_5px_0px_#16243E]">
-          <div class="relative overflow-hidden border-[1.5px] border-ink bg-[#111B2E]">
+        <div class="border-[1.5px] border-ink bg-white p-3 shadow-[5px_5px_0px_#1B140E]">
+          <div class="relative overflow-hidden border-[1.5px] border-ink bg-[#1B130E]">
             <!-- ============================================================
-                 LAVAGNA SCROVEGNI: Vettoriale Feynman Path Integral da P a D
-                 Tipografia matematica rigorosa con veri pedici/apici e frecce tangenti
+                 LAVAGNA TEORICA: Vettoriale Feynman Path Integral da P a D
+                 Tipografia matematica rigorosa con nuova palette ufficiale
                  ============================================================ -->
             <div class="w-full h-80 sm:h-84 flex items-center justify-center select-none">
               <svg
@@ -67,24 +67,24 @@ import { eventInfo } from '../data/siteData';
                 aria-label="Lavagna teorica: Integrale sui cammini di Feynman da P a D"
               >
                 <defs>
-                  <!-- Delicate radial glow over blackboard center -->
+                  <!-- Delicate radial glow over blackboard center (warm chalkboard espresso) -->
                   <radialGradient id="chalk-glow" cx="50%" cy="48%" r="65%">
-                    <stop offset="0%" stop-color="#1A2844" stop-opacity="0.9" />
-                    <stop offset="70%" stop-color="#111B2E" stop-opacity="1" />
-                    <stop offset="100%" stop-color="#0B1320" stop-opacity="1" />
+                    <stop offset="0%" stop-color="#261B16" stop-opacity="0.95" />
+                    <stop offset="70%" stop-color="#1B130E" stop-opacity="1" />
+                    <stop offset="100%" stop-color="#120D09" stop-opacity="1" />
                   </radialGradient>
 
                   <!-- Millimeter/Cartesian coordinate grid -->
                   <pattern id="math-grid" width="22" height="22" patternUnits="userSpaceOnUse">
-                    <path d="M 22 0 L 0 0 0 22" fill="none" stroke="#FAF9F6" stroke-width="0.5" stroke-opacity="0.07" />
+                    <path d="M 22 0 L 0 0 0 22" fill="none" stroke="#EFD6AD" stroke-width="0.5" stroke-opacity="0.08" />
                   </pattern>
 
                   <!-- Auto-oriented SVG markers for tangent-following arrows -->
                   <marker id="arrow-classical" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
-                    <path d="M 0 0.8 L 5 3 L 0 5.2 z" fill="#E11D48" />
+                    <path d="M 0 0.8 L 5 3 L 0 5.2 z" fill="#D44E42" />
                   </marker>
                   <marker id="arrow-chalk" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
-                    <path d="M 0 0.8 L 5 3 L 0 5.2 z" fill="#FAF9F6" fill-opacity="0.85" />
+                    <path d="M 0 0.8 L 5 3 L 0 5.2 z" fill="#EFD6AD" fill-opacity="0.85" />
                   </marker>
                 </defs>
 
@@ -93,17 +93,17 @@ import { eventInfo } from '../data/siteData';
                 <rect width="540" height="340" fill="url(#math-grid)" />
 
                 <!-- Subtle Spacetime Coordinate Axes (faint chalk) -->
-                <line x1="45" y1="270" x2="505" y2="270" stroke="#FAF9F6" stroke-width="0.7" stroke-opacity="0.2" />
-                <line x1="60" y1="280" x2="60" y2="70" stroke="#FAF9F6" stroke-width="0.7" stroke-opacity="0.2" />
-                <text x="500" y="265" fill="#8F9BAE" font-family="'Space Mono', monospace" font-size="9" text-anchor="end">spazio-tempo (x, t) →</text>
-                <text x="65" y="75" fill="#8F9BAE" font-family="'Space Mono', monospace" font-size="9">ampiezza ⟨ψ⟩ ↑</text>
+                <line x1="45" y1="270" x2="505" y2="270" stroke="#EFD6AD" stroke-width="0.7" stroke-opacity="0.25" />
+                <line x1="60" y1="280" x2="60" y2="70" stroke="#EFD6AD" stroke-width="0.7" stroke-opacity="0.25" />
+                <text x="500" y="265" fill="#DEB393" font-family="'Space Mono', monospace" font-size="9" text-anchor="end">spazio-tempo (x, t) →</text>
+                <text x="65" y="75" fill="#DEB393" font-family="'Space Mono', monospace" font-size="9">ampiezza ⟨ψ⟩ ↑</text>
 
                 <!-- ============================================================
                      FORMULA CHIAVE IN ALTO A SINISTRA (LaTeX / Stile Gesso Rigoroso)
                      ============================================================ -->
                 <g transform="translate(24, 30)">
                   <!-- 𝒵 = ∫_P^D 𝒟ϕ exp(i/ħ S[ϕ]) con corretti limiti superiore e inferiore -->
-                  <text x="0" y="0" fill="#FAF9F6" font-family="'Times New Roman', Times, serif" font-size="18">
+                  <text x="0" y="0" fill="#EFD6AD" font-family="'Times New Roman', Times, serif" font-size="18">
                     <tspan font-style="italic">𝒵</tspan>
                     <tspan font-style="normal"> = </tspan>
                     <tspan font-style="italic" font-size="22">∫</tspan>
@@ -112,13 +112,13 @@ import { eventInfo } from '../data/siteData';
                     <tspan font-style="italic" font-size="17" dy="7" dx="3"> 𝒟ϕ · </tspan>
                     <tspan font-style="normal" font-size="16">exp</tspan>
                     <tspan font-style="normal" font-size="15">( </tspan>
-                    <tspan fill="#E11D48" font-style="italic" font-size="15">i</tspan>
-                    <tspan fill="#E11D48" font-style="normal" font-size="15">/ħ · </tspan>
-                    <tspan fill="#E11D48" font-style="italic" font-size="15">S[ϕ]</tspan>
+                    <tspan fill="#D44E42" font-style="italic" font-size="15">i</tspan>
+                    <tspan fill="#D44E42" font-style="normal" font-size="15">/ħ · </tspan>
+                    <tspan fill="#D44E42" font-style="italic" font-size="15">S[ϕ]</tspan>
                     <tspan font-style="normal" font-size="15"> )</tspan>
                   </text>
                   <!-- Ampiezza di transizione con veri pedici f, i, paths ed esponente iS/ħ -->
-                  <text x="2" y="20" fill="#8F9BAE" font-family="'Space Mono', monospace" font-size="9.5" letter-spacing="0.02em">
+                  <text x="2" y="20" fill="#DEB393" font-family="'Space Mono', monospace" font-size="9.5" letter-spacing="0.02em">
                     ⟨ D, t<tspan dy="2" font-size="75%">f</tspan><tspan dy="-2"> | P, t</tspan><tspan dy="2" font-size="75%">i</tspan><tspan dy="-2"> ⟩ = ∑</tspan><tspan dy="3" font-size="70%">paths</tspan><tspan dy="-3"> e</tspan><tspan dy="-4" font-size="75%">iS/ħ</tspan><tspan dy="4"></tspan>
                   </text>
                 </g>
@@ -128,16 +128,16 @@ import { eventInfo } from '../data/siteData';
                      ============================================================ -->
                 <g transform="translate(390, 24)">
                   <!-- Incoming wavy photon -->
-                  <path d="M 0 16 Q 6 10 12 16 T 24 16 T 34 16" stroke="#FAF9F6" stroke-width="1.2" fill="none" stroke-opacity="0.7" />
+                  <path d="M 0 16 Q 6 10 12 16 T 24 16 T 34 16" stroke="#EFD6AD" stroke-width="1.2" fill="none" stroke-opacity="0.75" />
                   <!-- Fermionic loop -->
-                  <circle cx="50" cy="16" r="15" fill="none" stroke="#FAF9F6" stroke-width="1.3" stroke-opacity="0.85" />
+                  <circle cx="50" cy="16" r="15" fill="none" stroke="#EFD6AD" stroke-width="1.3" stroke-opacity="0.85" />
                   <!-- Loop direction arrows -->
-                  <path d="M 50 1 L 54 4 L 50 7" fill="#FAF9F6" fill-opacity="0.8" />
-                  <path d="M 50 31 L 46 28 L 50 25" fill="#FAF9F6" fill-opacity="0.8" />
+                  <path d="M 50 1 L 54 4 L 50 7" fill="#EFD6AD" fill-opacity="0.8" />
+                  <path d="M 50 31 L 46 28 L 50 25" fill="#EFD6AD" fill-opacity="0.8" />
                   <!-- Outgoing wavy photon -->
-                  <path d="M 66 16 Q 72 10 78 16 T 90 16 T 100 16" stroke="#FAF9F6" stroke-width="1.2" fill="none" stroke-opacity="0.7" />
+                  <path d="M 66 16 Q 72 10 78 16 T 90 16 T 100 16" stroke="#EFD6AD" stroke-width="1.2" fill="none" stroke-opacity="0.75" />
                   <!-- Subtitle label con vero pedice μν -->
-                  <text x="50" y="44" fill="#8F9BAE" font-family="'Space Mono', monospace" font-size="8.5" text-anchor="middle">
+                  <text x="50" y="44" fill="#DEB393" font-family="'Space Mono', monospace" font-size="8.5" text-anchor="middle">
                     Π<tspan dy="2" font-size="75%">μν</tspan><tspan dy="-2">(q) · 1-loop</tspan>
                   </text>
                 </g>
@@ -148,7 +148,7 @@ import { eventInfo } from '../data/siteData';
                 <!-- Traiettoria 1: Alta fluttuazione quantistica (tratteggiata sottile) -->
                 <path
                   d="M 80 175 C 135 65, 235 55, 305 90 C 365 120, 410 110, 445 155"
-                  stroke="#FAF9F6"
+                  stroke="#EFD6AD"
                   stroke-width="1.1"
                   stroke-dasharray="4 3"
                   stroke-opacity="0.45"
@@ -158,7 +158,7 @@ import { eventInfo } from '../data/siteData';
                 <!-- Traiettoria 2: Con loop quantistico superiore (freccia orientata perfettamente lungo la tangente) -->
                 <path
                   d="M 80 175 C 120 110, 155 85, 195 105 C 220 120, 215 145, 190 140 C 170 135, 175 110, 205 95 C 255 75, 290 77, 330 83"
-                  stroke="#FAF9F6"
+                  stroke="#EFD6AD"
                   stroke-width="1.5"
                   stroke-opacity="0.8"
                   fill="none"
@@ -167,7 +167,7 @@ import { eventInfo } from '../data/siteData';
                 />
                 <path
                   d="M 330 83 C 370 89, 415 115, 445 155"
-                  stroke="#FAF9F6"
+                  stroke="#EFD6AD"
                   stroke-width="1.5"
                   stroke-opacity="0.8"
                   fill="none"
@@ -177,7 +177,7 @@ import { eventInfo } from '../data/siteData';
                 <!-- Traiettoria 3: Loop inferiore (freccia orientata perfettamente lungo la tangente) -->
                 <path
                   d="M 80 175 C 115 220, 160 235, 195 220 C 220 205, 215 185, 190 190 C 170 195, 175 220, 205 230 C 245 240, 285 236, 320 230"
-                  stroke="#FAF9F6"
+                  stroke="#EFD6AD"
                   stroke-width="1.4"
                   stroke-opacity="0.75"
                   fill="none"
@@ -186,7 +186,7 @@ import { eventInfo } from '../data/siteData';
                 />
                 <path
                   d="M 320 230 C 365 220, 415 195, 445 155"
-                  stroke="#FAF9F6"
+                  stroke="#EFD6AD"
                   stroke-width="1.4"
                   stroke-opacity="0.75"
                   fill="none"
@@ -196,7 +196,7 @@ import { eventInfo } from '../data/siteData';
                 <!-- Traiettoria 4: Profonda fluttuazione (puntinata tenue) -->
                 <path
                   d="M 80 175 C 145 250, 275 260, 365 215 C 405 195, 430 175, 445 155"
-                  stroke="#FAF9F6"
+                  stroke="#EFD6AD"
                   stroke-width="0.9"
                   stroke-dasharray="2 3"
                   stroke-opacity="0.3"
@@ -205,11 +205,11 @@ import { eventInfo } from '../data/siteData';
 
                 <!-- ============================================================
                      TRAIETTORIA CLASSICA CENTRALE (AZIONE STAZIONARIA δS = 0)
-                     Evidenziata in Rosso Terracotta con freccia orientata lungo la tangente
+                     Evidenziata in Corallo Caldo con freccia orientata lungo la tangente
                      ============================================================ -->
                 <path
                   d="M 80 175 C 150 148, 210 162, 270 168"
-                  stroke="#E11D48"
+                  stroke="#D44E42"
                   stroke-width="2.6"
                   stroke-linecap="round"
                   fill="none"
@@ -217,12 +217,12 @@ import { eventInfo } from '../data/siteData';
                 />
                 <path
                   d="M 270 168 C 330 174, 390 160, 445 155"
-                  stroke="#E11D48"
+                  stroke="#D44E42"
                   stroke-width="2.6"
                   stroke-linecap="round"
                   fill="none"
                 />
-                <text x="240" y="154" fill="#E11D48" font-family="'Space Mono', monospace" font-size="10.5" font-weight="bold">
+                <text x="240" y="154" fill="#D44E42" font-family="'Space Mono', monospace" font-size="10.5" font-weight="bold">
                   δS = 0 (traiettoria classica)
                 </text>
 
@@ -230,10 +230,10 @@ import { eventInfo } from '../data/siteData';
                      PUNTO P (INIZIALE - SINISTRA) CON VERO PEDICE (x_i, t_i)
                      ============================================================ -->
                 <g>
-                  <circle cx="80" cy="175" r="7" fill="none" stroke="#E11D48" stroke-width="1" stroke-dasharray="2 2" />
-                  <circle cx="80" cy="175" r="4.5" fill="#FAF9F6" />
-                  <text x="56" y="196" fill="#FAF9F6" font-family="'Architects Daughter', cursive" font-size="22" font-weight="bold">P</text>
-                  <text x="44" y="210" fill="#8F9BAE" font-family="'Space Mono', monospace" font-size="9">
+                  <circle cx="80" cy="175" r="7" fill="none" stroke="#D44E42" stroke-width="1" stroke-dasharray="2 2" />
+                  <circle cx="80" cy="175" r="4.5" fill="#EFD6AD" />
+                  <text x="56" y="196" fill="#EFD6AD" font-family="'Architects Daughter', cursive" font-size="22" font-weight="bold">P</text>
+                  <text x="44" y="210" fill="#DEB393" font-family="'Space Mono', monospace" font-size="9">
                     (x<tspan dy="2" font-size="75%">i</tspan><tspan dy="-2">, t</tspan><tspan dy="2" font-size="75%">i</tspan><tspan dy="-2">)</tspan>
                   </text>
                 </g>
@@ -242,10 +242,10 @@ import { eventInfo } from '../data/siteData';
                      PUNTO D (FINALE / PADOVA - DESTRA) CON VERO PEDICE (x_f, t_f)
                      ============================================================ -->
                 <g>
-                  <circle cx="445" cy="155" r="7" fill="none" stroke="#E11D48" stroke-width="1" stroke-dasharray="2 2" />
-                  <circle cx="445" cy="155" r="4.5" fill="#FAF9F6" />
-                  <text x="462" y="158" fill="#FAF9F6" font-family="'Architects Daughter', cursive" font-size="22" font-weight="bold">D</text>
-                  <text x="460" y="172" fill="#8F9BAE" font-family="'Space Mono', monospace" font-size="9">
+                  <circle cx="445" cy="155" r="7" fill="none" stroke="#D44E42" stroke-width="1" stroke-dasharray="2 2" />
+                  <circle cx="445" cy="155" r="4.5" fill="#EFD6AD" />
+                  <text x="462" y="158" fill="#EFD6AD" font-family="'Architects Daughter', cursive" font-size="22" font-weight="bold">D</text>
+                  <text x="460" y="172" fill="#DEB393" font-family="'Space Mono', monospace" font-size="9">
                     (x<tspan dy="2" font-size="75%">f</tspan><tspan dy="-2">, t</tspan><tspan dy="2" font-size="75%">f</tspan><tspan dy="-2">)</tspan>
                   </text>
                 </g>
@@ -254,7 +254,7 @@ import { eventInfo } from '../data/siteData';
                      FORMULA DI EULERO-LAGRANGE CON VERI PEDICI ∂_μ (NO UNDERSCORE)
                      ============================================================ -->
                 <g transform="translate(24, 288)">
-                  <text x="0" y="0" fill="#FAF9F6" font-family="'Times New Roman', Times, serif" font-size="14.5">
+                  <text x="0" y="0" fill="#EFD6AD" font-family="'Times New Roman', Times, serif" font-size="14.5">
                     <tspan font-style="normal">δS = 0 ⟹ </tspan>
                     <tspan font-style="italic">∂ℒ/∂ϕ − ∂</tspan>
                     <tspan font-style="italic" font-size="75%" dy="2">μ</tspan>
@@ -262,7 +262,7 @@ import { eventInfo } from '../data/siteData';
                     <tspan font-style="italic" font-size="75%" dy="2">μ</tspan>
                     <tspan font-style="italic" dy="-2">ϕ) ) = 0</tspan>
                   </text>
-                  <text x="2" y="16" fill="#8F9BAE" font-family="'Space Mono', monospace" font-size="8.5">
+                  <text x="2" y="16" fill="#DEB393" font-family="'Space Mono', monospace" font-size="8.5">
                     Equazioni di moto classiche · Principio di minima azione
                   </text>
                 </g>
@@ -291,7 +291,7 @@ import { eventInfo } from '../data/siteData';
     <PathIntegralSeparator variant="loop" startLabel="P" endLabel="D" className="my-6" />
 
     <!-- Key Metrics & Overview (Editorial Grid instead of generic gradient) -->
-    <div class="border-[1.5px] border-ink bg-white p-8 sm:p-10 shadow-[5px_5px_0px_#16243E]">
+    <div class="border-[1.5px] border-ink bg-white p-8 sm:p-10 shadow-[5px_5px_0px_#1B140E]">
       <div class="grid sm:grid-cols-3 gap-8 text-left divide-y sm:divide-y-0 sm:divide-x divide-ink/20">
         <div class="sm:pr-6 pt-4 sm:pt-0">
           <span class="font-mono text-xs text-ink-muted uppercase tracking-wider block mb-1">Posti Disponibili</span>
