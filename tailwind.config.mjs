@@ -5,11 +5,11 @@ export default {
     extend: {
       colors: {
         paper: {
-          DEFAULT: '#EFD6AD',
+          DEFAULT: '#FAF6EE',
           pure: '#FFFFFF',
-          warm: '#E8CE9F',
-          subtle: '#F8EEDD',
-          border: '#DEC197',
+          warm: '#F4ECE0',
+          subtle: '#FDFBF7',
+          border: '#E8DCCB',
         },
         ink: {
           DEFAULT: '#1B140E',
@@ -47,7 +47,7 @@ export default {
           crimson: '#8C222C',
           smoke: '#685548',
           coral: '#D44E42',
-          bg: '#EFD6AD',
+          bg: '#FAF6EE',
           surface: '#FFFFFF',
           border: '#1B140E',
         },

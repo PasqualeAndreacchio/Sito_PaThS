@@ -8,12 +8,12 @@
    ========================================================= */
 
 :root {
-  /* 1. Sfondo Principale e Secondari */
-  --color-paper-default: #EFD6AD;  /* rgb(239, 214, 173) - Pergamena dorata calda / main canvas */
+  /* 1. Sfondo Principale e Secondari (Schiariti per massimo contrasto e uniformità) */
+  --color-paper-default: #FAF6EE;  /* rgb(250, 246, 238) - Pergamena chiara e luminosa ad alto contrasto */
   --color-paper-pure: #FFFFFF;     /* rgb(255, 255, 255) - Tessere card esagoni pulite */
-  --color-paper-warm: #E8CE9F;     /* rgb(232, 206, 159) - Sfondo secondario caldo */
-  --color-paper-subtle: #F8EEDD;   /* rgb(248, 238, 221) - Tinta chiarissima per hover e contrasto */
-  --color-paper-border: #DEC197;   /* rgb(222, 193, 151) - Bordi divisori chiari */
+  --color-paper-warm: #F4ECE0;     /* rgb(244, 236, 224) - Sfondo secondario caldo */
+  --color-paper-subtle: #FDFBF7;   /* rgb(253, 251, 247) - Tinta chiarissima per hover e contrasto */
+  --color-paper-border: #E8DCCB;   /* rgb(232, 220, 203) - Bordi divisori chiari */
 
   /* 2. Testo Primario, Tratti Inchiostro ed Editoriali */
   --color-ink-default: #1B140E;    /* rgb(27, 20, 14) - Inchiostro scuro espresso caldo / bordi / ombre */
@@ -42,13 +42,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* navbar height offset */
-  background-color: #EFD6AD;
+  background-color: #FAF6EE;
   color: #1B140E;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
-  background-color: #EFD6AD;
+  background-color: #FAF6EE;
   color: #1B140E;
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   overflow-x: hidden;
@@ -62,7 +62,7 @@ body {
 
 /* ---- Navbar scroll effect ---- */
 #navbar.scrolled {
-  background-color: rgba(239, 214, 173, 0.96);
+  background-color: rgba(250, 246, 238, 0.96);
   border-bottom: 1.5px solid #1B140E;
   box-shadow: 0 4px 12px rgba(27, 20, 14, 0.08);
 }
@@ -104,7 +104,7 @@ body {
 /* ---- Editorial Cards: Ink borders, sharp corners, zero fuzzy AI shadow ---- */
 .editorial-card {
   border: 1.5px solid #1B140E;
-  background-color: #EFD6AD;
+  background-color: #FAF6EE;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 3px 3px 0px #1B140E;
 }
@@ -157,7 +157,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #EFD6AD;
+  background-color: #FAF6EE;
   color: #1B140E;
   font-family: 'Space Mono', monospace;
   font-weight: 700;
@@ -170,7 +170,7 @@ body {
 }
 
 .btn-secondary:hover {
-  background-color: #E8CE9F;
+  background-color: #F4ECE0;
   transform: translate(-2px, -2px);
   box-shadow: 5px 5px 0px #1B140E;
 }

@@ -10,10 +10,10 @@ interface Props {
 const {
   title = "PaThS 2027 – Padova Theoretical School",
   description = "Prima edizione della Padova Theoretical School (PaThS), organizzata dall'AISF Comitato Locale di Padova. 15-19 Marzo 2027, Università di Padova.",
-  image = "./images/logo_paths.png",
+  image = "/images/logo_paths.png",
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://pasqualeandreacchio.github.io/Sito_PaThS/");
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://pasqualeandreacchio.github.io/");
 const ogImageURL = new URL(image, canonicalURL).href;
 ---
 
@@ -52,37 +52,39 @@ const ogImageURL = new URL(image, canonicalURL).href;
     
     <!-- ============================================================
          WATERCOLOR ATMOSPHERE LAYERS (OFFICIAL EVENT PALETTE)
-         Top Header Wash: Warm Terracotta/Coral Wash (#D44E42 / #8C222C / #B87266)
-         Bottom Accent: Warm Bo Red & Sand Bloom (#8C222C / #DCB393)
+         Hidden on mobile for uniform, high-contrast text rendering.
+         Visible on desktop as a subtle atmospheric backdrop.
          ============================================================ -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-      <!-- Top Warm Coral & Rosso Bo Watercolor Header Wash -->
-      <div
-        class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[520px] rounded-full opacity-30 filter blur-3xl mix-blend-multiply"
-        style="background: radial-gradient(ellipse at 50% 20%, #D44E42 0%, #8C222C 45%, #B87266 70%, transparent 85%);"
-      ></div>
-      <div
-        class="absolute -top-24 -left-20 w-[480px] h-[480px] rounded-full opacity-25 filter blur-2xl mix-blend-multiply"
-        style="background: radial-gradient(circle at 30% 30%, #D44E42 0%, #8C222C 55%, transparent 80%);"
-      ></div>
-      <div
-        class="absolute -top-24 -right-20 w-[480px] h-[480px] rounded-full opacity-25 filter blur-2xl mix-blend-multiply"
-        style="background: radial-gradient(circle at 70% 30%, #B87266 0%, #D44E42 50%, transparent 80%);"
-      ></div>
+      <div class="hidden md:block w-full h-full relative">
+        <!-- Top Warm Coral & Rosso Bo Watercolor Header Wash -->
+        <div
+          class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[520px] rounded-full opacity-25 filter blur-3xl mix-blend-multiply"
+          style="background: radial-gradient(ellipse at 50% 20%, #D44E42 0%, #8C222C 45%, #B87266 70%, transparent 85%);"
+        ></div>
+        <div
+          class="absolute -top-24 -left-20 w-[480px] h-[480px] rounded-full opacity-20 filter blur-2xl mix-blend-multiply"
+          style="background: radial-gradient(circle at 30% 30%, #D44E42 0%, #8C222C 55%, transparent 80%);"
+        ></div>
+        <div
+          class="absolute -top-24 -right-20 w-[480px] h-[480px] rounded-full opacity-20 filter blur-2xl mix-blend-multiply"
+          style="background: radial-gradient(circle at 70% 30%, #B87266 0%, #D44E42 50%, transparent 80%);"
+        ></div>
 
-      <!-- Bottom-Right Warm Bo Red & Rose Bloom -->
-      <div
-        class="absolute -bottom-36 -right-36 w-[600px] h-[600px] rounded-full opacity-25 filter blur-3xl mix-blend-multiply"
-        style="background: radial-gradient(circle at 65% 65%, #D44E42 0%, #8C222C 50%, transparent 85%);"
-      ></div>
-      <div
-        class="absolute bottom-10 right-10 w-[380px] h-[380px] rounded-full opacity-20 filter blur-2xl mix-blend-multiply"
-        style="background: radial-gradient(circle at 70% 70%, #B87266 0%, #8C222C 55%, transparent 75%);"
-      ></div>
+        <!-- Bottom-Right Warm Bo Red & Rose Bloom -->
+        <div
+          class="absolute -bottom-36 -right-36 w-[600px] h-[600px] rounded-full opacity-20 filter blur-3xl mix-blend-multiply"
+          style="background: radial-gradient(circle at 65% 65%, #D44E42 0%, #8C222C 50%, transparent 85%);"
+        ></div>
+        <div
+          class="absolute bottom-10 right-10 w-[380px] h-[380px] rounded-full opacity-15 filter blur-2xl mix-blend-multiply"
+          style="background: radial-gradient(circle at 70% 70%, #B87266 0%, #8C222C 55%, transparent 75%);"
+        ></div>
+      </div>
 
       <!-- Subtle paper noise texture / grain -->
       <div
-        class="absolute inset-0 opacity-[0.03]"
+        class="absolute inset-0 opacity-[0.025]"
         style="background-image: radial-gradient(#1B140E 1px, transparent 1px); background-size: 24px 24px;"
       ></div>
     </div>

@@ -5,27 +5,6 @@ import { eventInfo } from '../data/siteData';
 <section id="hero" class="relative min-h-[92vh] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto w-full">
 
-    <!-- Top bar: Institutional Badges directly mirroring the poster -->
-    <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
-      <!-- Left: AISF National institutional box (just like top-left of the poster) -->
-      <div class="inline-flex items-center gap-3 bg-white border-[1.5px] border-ink px-4 py-2 shadow-[2px_2px_0px_#1B140E]">
-        <div class="w-6 h-6 rounded-full bg-gradient-to-tr from-rose-700 via-amber-600 to-rose-400 flex items-center justify-center text-white text-[10px] font-bold font-mono">
-          Ψ
-        </div>
-        <div class="leading-tight">
-          <span class="font-black text-ink tracking-wider text-xs block font-mono">A I S F</span>
-          <span class="text-[9px] text-ink-muted uppercase tracking-tight block">Associazione Italiana Studenti di Fisica</span>
-        </div>
-      </div>
-
-      <!-- Right: UniPD & Local Committee coordinate badge -->
-      <div class="inline-flex items-center gap-2 text-xs font-mono text-ink-muted border-[1.5px] border-ink/30 px-3 py-1.5 bg-paper-warm">
-        <span class="w-2 h-2 rounded-full bg-crimson animate-pulse"></span>
-        <span class="font-bold text-ink">UniPD · Comitato Locale di Padova</span>
-        <span class="text-ink-muted hidden sm:inline">| 45.4064° N, 11.8768° E</span>
-      </div>
-    </div>
-
     <!-- Central Hero Composition: The Path Integral Identity & Editorial Content -->
     <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
@@ -37,7 +16,7 @@ import { eventInfo } from '../data/siteData';
              ============================================================ -->
         <div class="w-full max-w-lg lg:max-w-xl my-2 select-none">
           <img
-            src="./images/logo_paths.png"
+            src="/images/logo_paths.png"
             alt="PaThS – Padova Theoretical Physics School"
             class="w-full h-auto object-contain filter drop-shadow-sm"
             width="1600"
@@ -117,7 +96,7 @@ import { eventInfo } from '../data/siteData';
             aria-label="AISF Padova"
           >
             <img
-              src="./images/logo_aisf_padova.png"
+              src="/images/logo_aisf_padova.png"
               alt="AISF Padova – Comitato Locale"
               class="w-full h-full object-cover rounded-full"
               width="800"
@@ -129,28 +108,10 @@ import { eventInfo } from '../data/siteData';
           <!-- Real Local Photo of Padua with elegant muted editorial filter -->
           <div class="relative overflow-hidden border-[1.5px] border-ink bg-paper-warm">
             <img
-              src="./images/padova.jpg"
+              src="/images/padova.jpg"
               alt="Padova – Sede della Theoretical School 2027"
               class="w-full h-80 sm:h-96 object-cover object-center filter contrast-[1.02] saturate-[0.85] brightness-[0.98]"
             />
-            <!-- Architectural coordinate label -->
-            <div class="absolute bottom-0 inset-x-0 bg-ink text-paper px-3 py-1.5 flex justify-between items-center text-[10px] font-mono gap-4">
-              <span class="truncate">PADOVA · CULLA DELLA FISICA TEORICA</span>
-              <span class="flex-shrink-0">1222–2027</span>
-            </div>
-          </div>
-
-          <!-- Exhibition caption under image (Cleanly separated columns to prevent collisions) -->
-          <div class="pt-3 pb-1 px-1 flex justify-between items-start gap-6 text-[11px] font-mono text-ink-muted">
-            <div class="flex-1 min-w-0 pr-2">
-              <p class="font-bold text-ink">FIG. 01 — IL TEATRO DELLA SCUOLA</p>
-              <p class="text-[10px] leading-relaxed text-ink-muted">
-                Palazzo del Monte di Pietà · Aula Rostagni DFA · Palazzo Bo · La Specola
-              </p>
-            </div>
-            <span class="text-terracotta font-bold whitespace-nowrap flex-shrink-0 pt-0.5">
-              PaThS 2027
-            </span>
           </div>
 
         </div>
