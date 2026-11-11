@@ -1,6 +1,14 @@
 ---
 import { programDays } from '../data/siteData';
-import PathIntegralSeparator from './PathIntegralSeparator.astro';
+
+// Determina se il relatore è un docente specifico dei corsi principali
+const isProfessor = (speaker?: string) => {
+  if (!speaker) return false;
+  return /^(prof\.|professore)/i.test(speaker.trim()) ||
+    speaker.includes('Massai') ||
+    speaker.includes('Volpato') ||
+    speaker.includes('Dall\'Agata');
+};
 
 // Day header color sequence matching poster palette (Ink, Terracotta, Crimson, Smoke)
 const dayHeaderStyles = [
@@ -17,16 +25,9 @@ const dayHeaderStyles = [
 
     <!-- Section header -->
     <div class="max-w-3xl mb-14">
-      <div class="inline-flex items-center gap-2 font-mono text-xs font-bold text-terracotta uppercase tracking-widest mb-3">
-        <span class="w-1.5 h-1.5 bg-terracotta"></span>
-        SEZIONE 02 · CRONOPROGRAMMA
-      </div>
       <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-ink uppercase tracking-tight mb-4">
-        Cinque Giorni di <span class="text-terracotta">Scienza e Confronto</span>
+        Cinque Giorni di Scienza e Confronto
       </h2>
-      <p class="font-mono text-xs sm:text-sm text-ink-muted uppercase tracking-wider">
-        15–19 Marzo 2027 · Palazzo del Monte di Pietà · DFA Rostagni · Palazzo Bo · La Specola
-      </p>
     </div>
 
     <!-- Scientific program types (Editorial Cards based on actual proposal modules) -->
@@ -67,9 +68,6 @@ const dayHeaderStyles = [
         <span class="text-[10px] font-mono text-ink block">Martedì &amp; Giovedì</span>
       </div>
     </div>
-
-    <!-- Separator -->
-    <PathIntegralSeparator variant="wave" className="my-6" />
 
     <!-- Day-by-day timeline accordion with editorial design -->
     <div class="space-y-4">
@@ -119,18 +117,20 @@ const dayHeaderStyles = [
                   </span>
                   <!-- Activity & Description -->
                   <div class="flex-1">
-                    <div class="flex items-center gap-2 flex-wrap mb-0.5">
-                      <p class="text-sm font-bold text-ink font-sans">{item.title}</p>
-                      {item.tag && (
-                        <span class="text-[10px] font-mono px-2 py-0.5 bg-paper-warm border border-ink/20 text-ink font-semibold">
-                          {item.tag}
-                        </span>
-                      )}
-                    </div>
+                    <p class="text-sm font-bold text-ink font-sans mb-0.5">{item.title}</p>
                     {item.speaker && (
                       <p class="text-xs text-crimson font-mono mt-1 font-semibold flex items-center gap-1.5">
-                        <span class="text-crimson">▸ Docente:</span>
-                        <span>{item.speaker}</span>
+                        {isProfessor(item.speaker) ? (
+                          <>
+                            <span class="text-crimson">▸ Docente:</span>
+                            <span>{item.speaker}</span>
+                          </>
+                        ) : (
+                          <>
+                            <span class="text-crimson">▸</span>
+                            <span>{item.speaker}</span>
+                          </>
+                        )}
                       </p>
                     )}
                     {item.location && (

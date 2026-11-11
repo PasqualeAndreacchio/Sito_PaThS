@@ -1,6 +1,5 @@
 ---
 import Topics from './Topics.astro';
-import PathIntegralSeparator from './PathIntegralSeparator.astro';
 import { eventInfo } from '../data/siteData';
 ---
 
@@ -9,16 +8,9 @@ import { eventInfo } from '../data/siteData';
 
     <!-- Section header -->
     <div class="max-w-3xl mb-14">
-      <div class="inline-flex items-center gap-2 font-mono text-xs font-bold text-terracotta uppercase tracking-widest mb-3">
-        <span class="w-1.5 h-1.5 bg-terracotta"></span>
-        SEZIONE 01 · L'INIZIATIVA
-      </div>
       <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-ink uppercase tracking-tight mb-4">
         Una scuola nata per la <span class="text-terracotta">fisica teorica pura</span>
       </h2>
-      <p class="font-mono text-xs sm:text-sm text-ink-muted uppercase tracking-wider">
-        Tradizione galileiana · Approfondimento specialistico · Dialogo con l'esperimento
-      </p>
     </div>
 
     <!-- Intro Text & Image Grid (Editorial asymmetric composition) -->
@@ -42,11 +34,6 @@ import { eventInfo } from '../data/siteData';
         <p class="text-sm sm:text-base text-ink-soft leading-relaxed">
           Nonostante la forte vocazione teorica, la scuola manterrà vivo il dialogo costante con la verifica sperimentale e computazionale, valorizzando simulazioni e modelli numerici per la fisica teorica d'avanguardia.
         </p>
-
-        <!-- Academic quote badge -->
-        <div class="border-l-4 border-crimson pl-4 py-2 my-4 bg-paper-warm text-ink text-xs sm:text-sm font-mono">
-          <em>«La scuola non si limita a riassumere nozioni: crea un percorso unitario tra gravità quantistica, teoria dei campi e materia condensata.»</em>
-        </div>
       </div>
 
       <!-- Theoretical Chalkboard Illustration (5 cols, editorial frame) -->
@@ -268,15 +255,6 @@ import { eventInfo } from '../data/siteData';
                 </g>
               </svg>
             </div>
-
-            <!-- Lower Coordinate Bar (Intact as requested) -->
-            <div class="absolute bottom-0 inset-x-0 bg-ink/95 text-paper text-[10px] font-mono px-3 py-1 flex justify-between border-t border-paper/10">
-              <span>DOCENTI &amp; RICERCATORI</span>
-              <span>DFA / INFN / UniPD</span>
-            </div>
-          </div>
-          <div class="pt-3 px-1 flex items-center justify-between text-[11px] font-mono text-ink-muted">
-            <span>FIG. 02 — RIGORE E METODO TEORICO</span>
           </div>
         </div>
       </div>
@@ -285,9 +263,6 @@ import { eventInfo } from '../data/siteData';
 
     <!-- Modulo Aree Tematiche -->
     <Topics />
-
-    <!-- Trajectory Separator between Topics and Stats -->
-    <PathIntegralSeparator variant="loop" startLabel="P" endLabel="D" className="my-6" />
 
     <!-- Key Metrics & Overview (Editorial Grid instead of generic gradient) -->
     <div class="border-[1.5px] border-ink bg-white p-8 sm:p-10 shadow-[5px_5px_0px_#1B140E]">
