@@ -10,10 +10,10 @@ interface Props {
 const {
   title = "PaThS 2027 – Padova Theoretical School",
   description = "Prima edizione della Padova Theoretical School (PaThS), organizzata dall'AISF Comitato Locale di Padova. 15-19 Marzo 2027, Università di Padova.",
-  image = "/images/logo_paths.png",
+  image = "./images/logo_paths.png",
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://pasqualeandreacchio.github.io/");
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://pasqualeandreacchio.github.io/Sito_PaThS/");
 const ogImageURL = new URL(image, canonicalURL).href;
 ---
 
