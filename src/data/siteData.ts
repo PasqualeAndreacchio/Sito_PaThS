@@ -62,7 +62,7 @@ export const eventInfo = {
   localCommittee: "Comitato Locale di Padova",
   email: "paths@ai-sf.it",
   instagramAisf: "https://www.instagram.com/aisf_padova?exln=MTN1MzRpYmg3ejVhZg==",
-  instagramPaths: "https://www.instagram.com/paths.padova",
+  instagramPaths: "https://www.instagram.com/paths_2027?cplk=NnFrcGk3cWF3cGVv",
   websiteAISF: "https://ai-sf.it",
   participantsCount: "48",
   participantsDetail: "40 nazionali (con alloggio) + 8 riservati UniPd (senza alloggio)",
